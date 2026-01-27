@@ -306,17 +306,22 @@ function NavBar() {
   }, []);
 
   useEffect(() => {
-    const observers = navItems.map(({ id }) => {
-      const element = document.getElementById(id);
-      if (!element) return null;
-      const observer = new IntersectionObserver(
-        ([entry]) => { if (entry.isIntersecting) setActiveSection(id); },
-        { threshold: 0.2, rootMargin: "-10% 0px -70% 0px" }
-      );
-      observer.observe(element);
-      return observer;
-    });
-    return () => observers.forEach((obs) => obs?.disconnect());
+    const handleScroll = () => {
+      const sections = navItems.map(({ id }) => document.getElementById(id)).filter(Boolean);
+      const scrollPosition = window.scrollY + window.innerHeight / 3;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        if (section && section.offsetTop <= scrollPosition) {
+          setActiveSection(section.id);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (id: string) => {
