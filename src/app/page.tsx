@@ -127,6 +127,15 @@ const projects: Project[] = [
     url: "https://mr-gnana.vercel.app/",
     thumbnail: "https://mr-gnana.vercel.app/_next/image?url=%2Fimages%2Fhero%20section.JPG&w=1920&q=75",
   },
+  {
+    id: 3,
+    title: "Landing Page",
+    description:
+      "A web development landing page with an animated 3D workspace scene, live code editor demo, and services showcase for custom websites, landing pages, and dashboards.",
+    technologies: [],
+    url: "https://jonathan-freelance.vercel.app/",
+    thumbnail: "/PHOTO/freelance.png",
+  },
 ];
 
 const services: Service[] = [
