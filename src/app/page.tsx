@@ -427,7 +427,7 @@ function HeroSection() {
                 alt="3D Developer Character"
                 width={450}
                 height={450}
-                className="object-contain drop-shadow-2xl mix-blend-multiply"
+                className="object-contain drop-shadow-2xl"
                 priority
               />
             </div>
