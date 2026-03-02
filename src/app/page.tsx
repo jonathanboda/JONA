@@ -192,27 +192,11 @@ const services: Service[] = [
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Manikanta",
-    role: "Founder",
-    company: "The Precious Interiors",
-    feedback: "Jonathan delivered an exceptional website that perfectly captures our brand's luxury aesthetic. His attention to detail and understanding of our vision made the entire process seamless.",
+    name: "Client Name",
+    role: "Role",
+    company: "Company",
+    feedback: "Your testimonial feedback here.",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
-  },
-  {
-    id: 2,
-    name: "Gnana",
-    role: "Music Director",
-    company: "Mr.Gnana",
-    feedback: "Working with Jonathan was a fantastic experience. He created a portfolio that truly represents my work and has helped me connect with more clients. Highly recommended!",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80",
-  },
-  {
-    id: 3,
-    name: "Rahul Kumar",
-    role: "CEO",
-    company: "Elvenwood Interior",
-    feedback: "Professional, creative, and reliable. Jonathan transformed our online presence with a stunning website that our clients love. The results exceeded our expectations.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80",
   },
 ];
 
