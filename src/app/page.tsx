@@ -136,6 +136,15 @@ const projects: Project[] = [
     url: "https://jonathan-freelance.vercel.app/",
     thumbnail: "/PHOTO/freelance.png",
   },
+  {
+    id: 4,
+    title: "The Precious Interiors",
+    description:
+      "A luxury interior design firm website showcasing premium residential and commercial space transformations with an elegant 4-stage project workflow.",
+    technologies: ["Next.js", "React", "Tailwind CSS"],
+    url: "https://thepreciousinteriors.com/",
+    thumbnail: "/PHOTO/image.png",
+  },
 ];
 
 const services: Service[] = [
