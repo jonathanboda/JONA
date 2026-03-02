@@ -377,10 +377,10 @@ function NavBar() {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <button onClick={() => scrollToSection("hero")} className="group flex items-center gap-3">
-              <span className="font-display text-2xl font-bold tracking-tight text-white group-hover:text-[#ff6b35] transition-colors">
+              <span className="font-display text-2xl font-bold tracking-tight text-white group-hover:text-[#7c3aed] transition-colors">
                 {personalInfo.firstName}
               </span>
-              <span className="text-[#ff6b35] text-2xl">.</span>
+              <span className="text-[#7c3aed] text-2xl">.</span>
             </button>
 
             {/* Desktop Navigation */}
@@ -390,13 +390,13 @@ function NavBar() {
                   key={id}
                   onClick={() => scrollToSection(id)}
                   className={`relative px-5 py-2 text-sm font-medium tracking-wide transition-all duration-300 ${
-                    activeSection === id ? "text-[#ff6b35]" : "text-gray-400 hover:text-white"
+                    activeSection === id ? "text-[#7c3aed]" : "text-gray-400 hover:text-white"
                   }`}
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <span className="relative z-10">{label}</span>
                   {activeSection === id && (
-                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[#ff6b35]" />
+                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[#7c3aed]" />
                   )}
                 </button>
               ))}
@@ -404,7 +404,7 @@ function NavBar() {
                 href={`https://mail.google.com/mail/?view=cm&to=${personalInfo.email}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="ml-4 px-6 py-2.5 bg-[#ff6b35] text-white text-sm font-semibold rounded-full btn-glow hover:bg-[#ff8c5a] transition-all duration-300"
+                className="ml-4 px-6 py-2.5 bg-[#7c3aed] text-white text-sm font-semibold rounded-full btn-glow hover:bg-[#a78bfa] transition-all duration-300"
               >
                 Let&apos;s Talk
               </a>
@@ -432,7 +432,7 @@ function NavBar() {
               key={id}
               onClick={() => scrollToSection(id)}
               className={`font-display text-4xl font-bold tracking-tight transition-all duration-300 ${
-                activeSection === id ? "text-[#ff6b35]" : "text-white hover:text-[#ff6b35]"
+                activeSection === id ? "text-[#7c3aed]" : "text-white hover:text-[#7c3aed]"
               }`}
               style={{
                 transform: menuOpen ? "translateY(0)" : "translateY(20px)",
@@ -463,7 +463,7 @@ function HeroSection() {
     <section id="hero" className="min-h-screen relative overflow-hidden bg-mesh noise-overlay">
       {/* Animated background orbs */}
       <div
-        className="absolute w-[600px] h-[600px] rounded-full bg-[#ff6b35]/20 glow-orb"
+        className="absolute w-[600px] h-[600px] rounded-full bg-[#7c3aed]/20 glow-orb"
         style={{
           left: `calc(20% + ${mousePosition.x * 0.02}px)`,
           top: `calc(20% + ${mousePosition.y * 0.02}px)`,
@@ -512,7 +512,7 @@ function HeroSection() {
             <div className="flex flex-wrap items-center gap-4 animate-fade-in-up opacity-0 delay-400">
               <button
                 onClick={() => scrollToSection("projects")}
-                className="group px-8 py-4 bg-[#ff6b35] text-white font-semibold rounded-full btn-glow hover:bg-[#ff8c5a] transition-all duration-300 flex items-center gap-2"
+                className="group px-8 py-4 bg-[#7c3aed] text-white font-semibold rounded-full btn-glow hover:bg-[#a78bfa] transition-all duration-300 flex items-center gap-2"
               >
                 View My Work
                 <ArrowUpRight />
@@ -543,7 +543,7 @@ function HeroSection() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-11 h-11 rounded-full glass glass-hover flex items-center justify-center text-gray-400 hover:text-[#ff6b35] transition-all duration-300"
+                    className="w-11 h-11 rounded-full glass glass-hover flex items-center justify-center text-gray-400 hover:text-[#7c3aed] transition-all duration-300"
                     aria-label={social.label}
                   >
                     {social.icon}
@@ -573,13 +573,13 @@ function AboutSection() {
 
   return (
     <section id="about" className="py-32 px-6 lg:px-12 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #050a15 0%, #0a1628 100%)' }}>
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#ff6b35]/30 to-transparent" />
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#7c3aed]/30 to-transparent" />
 
       <div ref={ref} className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left - Section title */}
           <div className={`${isVisible ? "animate-slide-in-left opacity-100" : "opacity-0"}`}>
-            <span className="text-[#ff6b35] text-sm font-semibold uppercase tracking-widest">About Me</span>
+            <span className="text-[#7c3aed] text-sm font-semibold uppercase tracking-widest">About Me</span>
             <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white mt-4 leading-tight">
               Crafting Digital<br />
               <span className="gradient-text">Experiences</span>
@@ -644,7 +644,7 @@ function ServicesSection() {
     <section id="services" className="py-32 px-6 lg:px-12 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #0a1628 0%, #050a15 100%)' }}>
       <div ref={ref} className="max-w-7xl mx-auto relative z-10">
         <div className={`text-center mb-20 ${isVisible ? "animate-fade-in-up opacity-100" : "opacity-0"}`}>
-          <span className="text-[#ff6b35] text-sm font-semibold uppercase tracking-widest">Services</span>
+          <span className="text-[#7c3aed] text-sm font-semibold uppercase tracking-widest">Services</span>
           <h2 className="font-display text-4xl sm:text-5xl font-bold text-white mt-4">
             What I <span className="gradient-text">Offer</span>
           </h2>
@@ -660,7 +660,7 @@ function ServicesSection() {
               style={getCardStyle(index)}
               onClick={() => setActiveIndex(index)}
             >
-              <div className={`rounded-3xl overflow-hidden ${index === activeIndex ? 'shadow-2xl shadow-[#ff6b35]/20' : ''}`}>
+              <div className={`rounded-3xl overflow-hidden ${index === activeIndex ? 'shadow-2xl shadow-[#7c3aed]/20' : ''}`}>
                 {/* Card Image Area */}
                 <div className="h-[240px] relative overflow-hidden">
                   <Image
@@ -674,7 +674,7 @@ function ServicesSection() {
 
                 {/* Card Content */}
                 <div className="bg-[#0a1628]/90 backdrop-blur-sm p-6">
-                  <h3 className={`font-display text-lg font-bold mb-2 italic ${index === activeIndex ? 'text-[#ff6b35]' : 'text-white'}`}>
+                  <h3 className={`font-display text-lg font-bold mb-2 italic ${index === activeIndex ? 'text-[#7c3aed]' : 'text-white'}`}>
                     {service.title}
                   </h3>
                   <p className="text-gray-400 text-sm leading-relaxed line-clamp-2">
@@ -693,7 +693,7 @@ function ServicesSection() {
               key={index}
               onClick={() => setActiveIndex(index)}
               className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                index === activeIndex ? 'w-8 bg-[#ff6b35]' : 'bg-gray-600 hover:bg-gray-500'
+                index === activeIndex ? 'w-8 bg-[#7c3aed]' : 'bg-gray-600 hover:bg-gray-500'
               }`}
             />
           ))}
@@ -748,7 +748,7 @@ function SkillsSection() {
 
       <div ref={ref} className="max-w-7xl mx-auto relative z-10">
         <div className={`text-center mb-20 ${isVisible ? "animate-fade-in-up opacity-100" : "opacity-0"}`}>
-          <span className="text-[#ff6b35] text-sm font-semibold uppercase tracking-widest">Skills</span>
+          <span className="text-[#7c3aed] text-sm font-semibold uppercase tracking-widest">Skills</span>
           <h2 className="font-display text-4xl sm:text-5xl font-bold text-white mt-4">
             My <span className="gradient-text">Expertise</span>
           </h2>
@@ -764,7 +764,7 @@ function SkillsSection() {
               style={getCardStyle(index)}
               onClick={() => setActiveIndex(index)}
             >
-              <div className={`rounded-3xl overflow-hidden ${index === activeIndex ? 'shadow-2xl shadow-[#ff6b35]/20' : ''}`}>
+              <div className={`rounded-3xl overflow-hidden ${index === activeIndex ? 'shadow-2xl shadow-[#7c3aed]/20' : ''}`}>
                 {/* Card Image Area */}
                 <div className="h-[240px] relative overflow-hidden">
                   <Image
@@ -778,7 +778,7 @@ function SkillsSection() {
 
                 {/* Card Content */}
                 <div className="bg-[#0a1628]/90 backdrop-blur-sm p-6">
-                  <h3 className={`font-display text-lg font-bold mb-2 italic ${index === activeIndex ? 'text-[#ff6b35]' : 'text-white'}`}>
+                  <h3 className={`font-display text-lg font-bold mb-2 italic ${index === activeIndex ? 'text-[#7c3aed]' : 'text-white'}`}>
                     {skill.name}
                   </h3>
                   <p className="text-gray-400 text-sm leading-relaxed line-clamp-2">
@@ -797,7 +797,7 @@ function SkillsSection() {
               key={index}
               onClick={() => setActiveIndex(index)}
               className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                index === activeIndex ? 'w-8 bg-[#ff6b35]' : 'bg-gray-600 hover:bg-gray-500'
+                index === activeIndex ? 'w-8 bg-[#7c3aed]' : 'bg-gray-600 hover:bg-gray-500'
               }`}
             />
           ))}
@@ -832,7 +832,7 @@ function ProjectCard({ project, index, isVisible }: { project: Project; index: n
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-14 h-14 rounded-full glass flex items-center justify-center text-white hover:text-[#ff6b35] hover:scale-110 transition-all duration-300"
+            className="w-14 h-14 rounded-full glass flex items-center justify-center text-white hover:text-[#7c3aed] hover:scale-110 transition-all duration-300"
           >
             <ExternalLinkIcon />
           </a>
@@ -842,14 +842,14 @@ function ProjectCard({ project, index, isVisible }: { project: Project; index: n
       {/* Content */}
       <div className="p-8">
         <a href={project.url} target="_blank" rel="noopener noreferrer">
-          <h3 className="font-display text-2xl font-bold text-white group-hover:text-[#ff6b35] transition-colors mb-3">
+          <h3 className="font-display text-2xl font-bold text-white group-hover:text-[#7c3aed] transition-colors mb-3">
             {project.title}
           </h3>
         </a>
         <p className="text-gray-400 mb-6 line-clamp-2">{project.description}</p>
         <div className="flex flex-wrap gap-2">
           {project.technologies.map((tech) => (
-            <span key={tech} className="px-4 py-1.5 text-xs font-medium bg-[#ff6b35]/10 text-[#ff6b35] rounded-full">
+            <span key={tech} className="px-4 py-1.5 text-xs font-medium bg-[#7c3aed]/10 text-[#7c3aed] rounded-full">
               {tech}
             </span>
           ))}
@@ -866,7 +866,7 @@ function ProjectsSection() {
     <section id="projects" className="py-32 px-6 lg:px-12" style={{ background: 'linear-gradient(180deg, #0a1628 0%, #050a15 100%)' }}>
       <div ref={ref} className="max-w-7xl mx-auto">
         <div className={`text-center mb-16 ${isVisible ? "animate-fade-in-up opacity-100" : "opacity-0"}`}>
-          <span className="text-[#ff6b35] text-sm font-semibold uppercase tracking-widest">Portfolio</span>
+          <span className="text-[#7c3aed] text-sm font-semibold uppercase tracking-widest">Portfolio</span>
           <h2 className="font-display text-4xl sm:text-5xl font-bold text-white mt-4">
             Featured <span className="gradient-text">Work</span>
           </h2>
@@ -889,7 +889,7 @@ function ProjectsSection() {
 
 function QuoteIcon() {
   return (
-    <svg fill="currentColor" viewBox="0 0 24 24" width="32" height="32" className="text-[#ff6b35]/30">
+    <svg fill="currentColor" viewBox="0 0 24 24" width="32" height="32" className="text-[#7c3aed]/30">
       <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
     </svg>
   );
@@ -928,12 +928,12 @@ function TestimonialsSection() {
 
   return (
     <section id="testimonials" className="py-32 px-6 lg:px-12 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #050a15 0%, #0a1628 100%)' }}>
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#ff6b35]/30 to-transparent" />
-      <div className="absolute top-1/2 left-0 w-[400px] h-[400px] rounded-full bg-[#ff6b35]/5 blur-[100px]" />
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#7c3aed]/30 to-transparent" />
+      <div className="absolute top-1/2 left-0 w-[400px] h-[400px] rounded-full bg-[#7c3aed]/5 blur-[100px]" />
 
       <div ref={ref} className="max-w-7xl mx-auto relative z-10">
         <div className={`text-center mb-16 ${isVisible ? "animate-fade-in-up opacity-100" : "opacity-0"}`}>
-          <span className="text-[#ff6b35] text-sm font-semibold uppercase tracking-widest">Testimonials</span>
+          <span className="text-[#7c3aed] text-sm font-semibold uppercase tracking-widest">Testimonials</span>
           <h2 className="font-display text-4xl sm:text-5xl font-bold text-white mt-4">
             What Clients <span className="gradient-text">Say</span>
           </h2>
@@ -959,12 +959,12 @@ function ContactSection() {
 
   return (
     <section id="contact" className="py-32 px-6 lg:px-12 bg-[#050a15] relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#ff6b35]/30 to-transparent" />
-      <div className="absolute bottom-1/2 right-0 w-[500px] h-[500px] rounded-full bg-[#ff6b35]/5 blur-[100px]" />
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#7c3aed]/30 to-transparent" />
+      <div className="absolute bottom-1/2 right-0 w-[500px] h-[500px] rounded-full bg-[#7c3aed]/5 blur-[100px]" />
 
       <div ref={ref} className="max-w-7xl mx-auto relative z-10">
         <div className={`text-center mb-16 ${isVisible ? "animate-fade-in-up opacity-100" : "opacity-0"}`}>
-          <span className="text-[#ff6b35] text-sm font-semibold uppercase tracking-widest">Contact</span>
+          <span className="text-[#7c3aed] text-sm font-semibold uppercase tracking-widest">Contact</span>
           <h2 className="font-display text-4xl sm:text-5xl font-bold text-white mt-4">
             Let&apos;s Work <span className="gradient-text">Together</span>
           </h2>
@@ -988,9 +988,9 @@ function ContactSection() {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-4 text-gray-400 hover:text-[#ff6b35] transition-colors group"
+                    className="flex items-center gap-4 text-gray-400 hover:text-[#7c3aed] transition-colors group"
                   >
-                    <span className="w-10 h-10 rounded-lg bg-[#ff6b35]/10 flex items-center justify-center text-[#ff6b35] group-hover:bg-[#ff6b35]/20 transition-colors">
+                    <span className="w-10 h-10 rounded-lg bg-[#7c3aed]/10 flex items-center justify-center text-[#7c3aed] group-hover:bg-[#7c3aed]/20 transition-colors">
                       {item.icon}
                     </span>
                     <span className="underline-hover">{item.label}</span>
@@ -1033,7 +1033,7 @@ function Footer() {
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-500 hover:text-[#ff6b35] transition-colors"
+              className="text-gray-500 hover:text-[#7c3aed] transition-colors"
             >
               {social.icon}
             </a>
