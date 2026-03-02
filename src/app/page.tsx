@@ -7,12 +7,6 @@ import Image from "next/image";
 // TYPE DEFINITIONS
 // =====================================================
 
-interface Skill {
-  name: string;
-  image: string;
-  description: string;
-}
-
 interface Project {
   id: number;
   title: string;
@@ -28,9 +22,10 @@ interface NavItem {
 }
 
 interface Service {
-  image: string;
+  icon: React.ReactNode;
   title: string;
   description: string;
+  color: string;
 }
 
 interface Testimonial {
@@ -52,77 +47,21 @@ const personalInfo = {
   lastName: "Naik",
   role: "Web Developer",
   location: "Hyderabad, India",
-  tagline: "Turning Ideas into Interactive Reality",
+  tagline: "I shape ideas into reality",
   about:
-    "I'm a web developer based in Hyderabad, passionate about building modern, interactive web experiences. I enjoy working across the full stack — from crafting pixel-perfect frontends to architecting robust backend systems. With expertise in React, Next.js, and Supabase, I turn ideas into functional, user-friendly applications.",
+    "I design purposeful digital experiences across a broad range of products, always working to make technology feel more human.",
   email: "jonathanboda193@gmail.com",
   linkedin: "https://linkedin.com/in/boda-jonathan-naik-3b55b5181",
   github: "https://github.com/jonathanboda",
   instagram: "https://instagram.com/jona_bfgim",
-  yearsExperience: 2,
-  projectsDone: 10,
-  clientsWorked: 5,
 };
-
-const skills: Skill[] = [
-  {
-    name: "Next.js",
-    image: "https://images.unsplash.com/photo-1618761714954-0b8cd0026356?w=800&q=80",
-    description: "Building fast, SEO-friendly React applications with server-side rendering.",
-  },
-  {
-    name: "React.js",
-    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&q=80",
-    description: "Creating interactive user interfaces with component-based architecture.",
-  },
-  {
-    name: "JavaScript",
-    image: "https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?w=800&q=80",
-    description: "Writing clean, efficient code for dynamic web experiences.",
-  },
-  {
-    name: "Supabase",
-    image: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&q=80",
-    description: "Building backends with real-time databases and authentication.",
-  },
-  {
-    name: "Web Development",
-    image: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&q=80",
-    description: "Crafting responsive, accessible websites with modern technologies.",
-  },
-  {
-    name: "Frontend Development",
-    image: "https://mr-gnana.vercel.app/_next/image?url=%2Fimages%2Fhero%20section.JPG&w=1920&q=75",
-    description: "Designing pixel-perfect interfaces with seamless user experiences.",
-  },
-  {
-    name: "Full Stack Development",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80",
-    description: "End-to-end development from database to deployment.",
-  },
-  {
-    name: "SQL",
-    image: "https://images.unsplash.com/photo-1489875347897-49f64b51c1f8?w=800&q=80",
-    description: "Managing and querying relational databases efficiently.",
-  },
-  {
-    name: "API Integration",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
-    description: "Connecting applications with third-party services and APIs.",
-  },
-  {
-    name: "Vercel",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
-    description: "Deploying and hosting modern web applications at scale.",
-  },
-];
 
 const projects: Project[] = [
   {
     id: 1,
     title: "Elvenwood Interior",
     description:
-      "A luxury interior design firm website with premium design services and modular manufacturing solutions across 50+ cities.",
+      "A luxury interior design firm website with premium design services and modular manufacturing solutions.",
     technologies: ["Next.js", "React", "Tailwind CSS"],
     url: "https://elvenwood-studio.vercel.app/",
     thumbnail: "https://elvenwood-studio.vercel.app/_next/image?url=%2Fimages%2Ffacility%2FModern%20Living%20Space.png&w=1920&q=75",
@@ -131,7 +70,7 @@ const projects: Project[] = [
     id: 2,
     title: "Mr.Gnana Portfolio",
     description:
-      "A music director portfolio showcasing atmospheric audio production, live performances, and custom sound design services.",
+      "A music director portfolio showcasing atmospheric audio production and live performances.",
     technologies: ["Next.js", "React"],
     url: "https://mr-gnana.vercel.app/",
     thumbnail: "https://mr-gnana.vercel.app/_next/image?url=%2Fimages%2Fhero%20section.JPG&w=1920&q=75",
@@ -140,8 +79,8 @@ const projects: Project[] = [
     id: 3,
     title: "Landing Page",
     description:
-      "A web development landing page with an animated 3D workspace scene, live code editor demo, and services showcase for custom websites, landing pages, and dashboards.",
-    technologies: [],
+      "A web development landing page with animated 3D workspace and live code editor demo.",
+    technologies: ["Next.js", "Three.js"],
     url: "https://jonathan-freelance.vercel.app/",
     thumbnail: "/PHOTO/freelance.png",
   },
@@ -149,7 +88,7 @@ const projects: Project[] = [
     id: 4,
     title: "The Precious Interiors",
     description:
-      "A luxury interior design firm website showcasing premium residential and commercial space transformations with an elegant 4-stage project workflow.",
+      "A luxury interior design firm website showcasing premium residential transformations.",
     technologies: ["Next.js", "React", "Tailwind CSS"],
     url: "https://thepreciousinteriors.com/",
     thumbnail: "/PHOTO/image.png",
@@ -158,34 +97,40 @@ const projects: Project[] = [
 
 const services: Service[] = [
   {
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+    icon: <WebIcon />,
     title: "Business Websites",
-    description: "Professional, responsive websites that establish your brand's online presence and drive business growth.",
+    description: "Professional, responsive websites that establish your brand.",
+    color: "bento-blue",
   },
   {
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+    icon: <RocketIcon />,
     title: "Landing Pages",
-    description: "High-converting landing pages designed to capture leads and maximize your marketing campaigns.",
+    description: "High-converting pages designed to capture leads.",
+    color: "bento-purple",
   },
   {
-    image: "https://mr-gnana.vercel.app/_next/image?url=%2Fimages%2Fhero%20section.JPG&w=1920&q=75",
-    title: "Portfolio Websites",
-    description: "Stunning portfolio sites that showcase your work and help you stand out from the competition.",
+    icon: <CodeIcon />,
+    title: "Web Applications",
+    description: "Custom solutions for your unique business needs.",
+    color: "bento-pink",
   },
   {
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+    icon: <PaletteIcon />,
+    title: "Portfolio Sites",
+    description: "Stunning portfolios that showcase your work.",
+    color: "bento-light",
+  },
+  {
+    icon: <DashboardIcon />,
     title: "Admin Dashboards",
-    description: "Intuitive admin panels and dashboards for efficient data management and business insights.",
+    description: "Intuitive panels for efficient data management.",
+    color: "bento-gray",
   },
   {
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
-    title: "Company Management Systems",
-    description: "Custom internal tools to streamline operations, manage teams, and boost productivity.",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80",
-    title: "Custom Web Applications",
-    description: "Tailored web solutions built to solve your unique business challenges and requirements.",
+    icon: <SettingsIcon />,
+    title: "Custom Systems",
+    description: "Internal tools to streamline operations.",
+    color: "bento-light",
   },
 ];
 
@@ -201,12 +146,9 @@ const testimonials: Testimonial[] = [
 ];
 
 const navItems: NavItem[] = [
-  { id: "hero", label: "Home" },
-  { id: "about", label: "About" },
   { id: "services", label: "Services" },
-  { id: "skills", label: "Skills" },
-  { id: "projects", label: "Work" },
-  { id: "testimonials", label: "Testimonials" },
+  { id: "projects", label: "Projects" },
+  { id: "about", label: "About" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -239,84 +181,71 @@ function useIntersectionObserver(
   return { ref, isVisible };
 }
 
-function useMousePosition() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
-
-  return mousePosition;
-}
-
 // =====================================================
 // ICON COMPONENTS
 // =====================================================
 
-function MenuIcon() {
+function WebIcon() {
   return (
     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
     </svg>
   );
 }
 
-function CloseIcon() {
+function RocketIcon() {
   return (
     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
     </svg>
   );
 }
 
-function ArrowUpRight() {
+function CodeIcon() {
+  return (
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+    </svg>
+  );
+}
+
+function PaletteIcon() {
+  return (
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+    </svg>
+  );
+}
+
+function DashboardIcon() {
+  return (
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+    </svg>
+  );
+}
+
+function SettingsIcon() {
+  return (
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+    </svg>
+  );
+}
+
+function PlayIcon() {
+  return (
+    <svg fill="currentColor" viewBox="0 0 24 24" width="20" height="20">
+      <path d="M8 5v14l11-7z" />
+    </svg>
+  );
+}
+
+function ArrowRightIcon() {
   return (
     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="20" height="20">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7V17" />
-    </svg>
-  );
-}
-
-function ArrowDown() {
-  return (
-    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-    </svg>
-  );
-}
-
-function EmailIcon() {
-  return (
-    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="20" height="20">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-    </svg>
-  );
-}
-
-function LinkedInIcon() {
-  return (
-    <svg fill="currentColor" viewBox="0 0 24 24" width="18" height="18">
-      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-    </svg>
-  );
-}
-
-function GitHubIcon() {
-  return (
-    <svg fill="currentColor" viewBox="0 0 24 24" width="18" height="18">
-      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-    </svg>
-  );
-}
-
-function InstagramIcon() {
-  return (
-    <svg fill="currentColor" viewBox="0 0 24 24" width="18" height="18">
-      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
     </svg>
   );
 }
@@ -324,7 +253,47 @@ function InstagramIcon() {
 function ExternalLinkIcon() {
   return (
     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="18" height="18">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+    </svg>
+  );
+}
+
+function EmailIcon() {
+  return (
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="20" height="20">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+    </svg>
+  );
+}
+
+function LinkedInIcon() {
+  return (
+    <svg fill="currentColor" viewBox="0 0 24 24" width="20" height="20">
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+    </svg>
+  );
+}
+
+function GitHubIcon() {
+  return (
+    <svg fill="currentColor" viewBox="0 0 24 24" width="20" height="20">
+      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+    </svg>
+  );
+}
+
+function MenuIcon() {
+  return (
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  );
+}
+
+function CloseIcon() {
+  return (
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
     </svg>
   );
 }
@@ -334,34 +303,7 @@ function ExternalLinkIcon() {
 // =====================================================
 
 function NavBar() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("hero");
-
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = navItems.map(({ id }) => document.getElementById(id)).filter(Boolean);
-      const scrollPosition = window.scrollY + window.innerHeight / 3;
-
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = sections[i];
-        if (section && section.offsetTop <= scrollPosition) {
-          setActiveSection(section.id);
-          break;
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Initial check
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -369,83 +311,57 @@ function NavBar() {
   };
 
   return (
-    <>
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled ? "glass shadow-2xl shadow-black/20" : "bg-transparent"
-      }`}>
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="flex items-center justify-between h-20">
-            {/* Logo */}
-            <button onClick={() => scrollToSection("hero")} className="group flex items-center gap-3">
-              <span className="font-display text-2xl font-bold tracking-tight text-white group-hover:text-[#7c3aed] transition-colors">
-                {personalInfo.firstName}
-              </span>
-              <span className="text-[#7c3aed] text-2xl">.</span>
-            </button>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#f5f5f5]">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="flex items-center justify-between h-20">
+          {/* Logo */}
+          <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="font-display text-xl font-bold text-gray-900">
+            {personalInfo.firstName}.co
+          </button>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-1">
-              {navItems.slice(1).map(({ id, label }, index) => (
-                <button
-                  key={id}
-                  onClick={() => scrollToSection(id)}
-                  className={`relative px-5 py-2 text-sm font-medium tracking-wide transition-all duration-300 ${
-                    activeSection === id ? "text-[#7c3aed]" : "text-gray-400 hover:text-white"
-                  }`}
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <span className="relative z-10">{label}</span>
-                  {activeSection === id && (
-                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[#7c3aed]" />
-                  )}
-                </button>
-              ))}
-              <a
-                href={`https://mail.google.com/mail/?view=cm&to=${personalInfo.email}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="ml-4 px-6 py-2.5 bg-[#7c3aed] text-white text-sm font-semibold rounded-full btn-glow hover:bg-[#a78bfa] transition-all duration-300"
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-2">
+            {navItems.map(({ id, label }) => (
+              <button
+                key={id}
+                onClick={() => scrollToSection(id)}
+                className="nav-link"
               >
-                Let&apos;s Talk
-              </a>
-            </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              className="md:hidden p-2 text-gray-400 hover:text-white transition-colors"
-              onClick={() => setMenuOpen(!menuOpen)}
-            >
-              {menuOpen ? <CloseIcon /> : <MenuIcon />}
-            </button>
+                {label}
+              </button>
+            ))}
           </div>
-        </div>
-      </nav>
 
-      {/* Mobile Menu */}
-      <div className={`fixed inset-0 z-40 md:hidden transition-all duration-500 ${
-        menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-      }`}>
-        <div className="absolute inset-0 bg-[#050a15]/98 backdrop-blur-xl" />
-        <div className="relative flex flex-col items-center justify-center h-full gap-8">
-          {navItems.map(({ id, label }, index) => (
-            <button
-              key={id}
-              onClick={() => scrollToSection(id)}
-              className={`font-display text-4xl font-bold tracking-tight transition-all duration-300 ${
-                activeSection === id ? "text-[#7c3aed]" : "text-white hover:text-[#7c3aed]"
-              }`}
-              style={{
-                transform: menuOpen ? "translateY(0)" : "translateY(20px)",
-                opacity: menuOpen ? 1 : 0,
-                transitionDelay: `${index * 50}ms`
-              }}
-            >
-              {label}
-            </button>
-          ))}
+          {/* Social Icons - Desktop */}
+          <div className="hidden md:flex items-center gap-4">
+            <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors">
+              <GitHubIcon />
+            </a>
+            <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors">
+              <LinkedInIcon />
+            </a>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button className="md:hidden p-2 text-gray-600" onClick={() => setMenuOpen(!menuOpen)}>
+            {menuOpen ? <CloseIcon /> : <MenuIcon />}
+          </button>
         </div>
       </div>
-    </>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="md:hidden absolute top-20 left-0 right-0 bg-white shadow-lg p-6">
+          <div className="flex flex-col gap-4">
+            {navItems.map(({ id, label }) => (
+              <button key={id} onClick={() => scrollToSection(id)} className="text-left py-2 text-gray-900 font-medium">
+                {label}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+    </nav>
   );
 }
 
@@ -454,111 +370,161 @@ function NavBar() {
 // =====================================================
 
 function HeroSection() {
-  const mousePosition = useMousePosition();
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <section id="hero" className="min-h-screen relative overflow-hidden bg-mesh noise-overlay">
-      {/* Animated background orbs */}
-      <div
-        className="absolute w-[600px] h-[600px] rounded-full bg-[#7c3aed]/20 glow-orb"
-        style={{
-          left: `calc(20% + ${mousePosition.x * 0.02}px)`,
-          top: `calc(20% + ${mousePosition.y * 0.02}px)`,
-        }}
-      />
-      <div
-        className="absolute w-[400px] h-[400px] rounded-full bg-[#3b82f6]/15 glow-orb delay-200"
-        style={{
-          right: `calc(10% + ${mousePosition.x * -0.015}px)`,
-          bottom: `calc(20% + ${mousePosition.y * -0.015}px)`,
-        }}
-      />
-
-      {/* Grid pattern */}
-      <div className="absolute inset-0 dot-grid opacity-30" />
-
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 min-h-screen flex items-center">
-        <div className="w-full py-32">
-          {/* Content */}
-          <div className="space-y-8 max-w-2xl">
-            {/* Greeting */}
-            <div className="animate-fade-in-up opacity-0">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-gray-300">
-                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                Available for work
-              </span>
-            </div>
-
-            {/* Main heading */}
-            <div className="space-y-2">
-              <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight animate-fade-in-up opacity-0 delay-100">
-                <span className="text-white">I&apos;m </span>
-                <span className="gradient-text-animated">{personalInfo.firstName}</span>
-              </h1>
-              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white/90 animate-fade-in-up opacity-0 delay-200">
-                {personalInfo.role}
-              </h2>
-            </div>
-
-            {/* Tagline */}
-            <p className="text-lg sm:text-xl text-gray-400 max-w-lg leading-relaxed animate-fade-in-up opacity-0 delay-300">
-              {personalInfo.tagline}. Building digital experiences that leave a lasting impression.
+    <section className="min-h-screen pt-20 bg-[#f5f5f5] relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-20 lg:py-32">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
+          <div className="space-y-8 animate-fade-in-up">
+            <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight">
+              {personalInfo.tagline}
+            </h1>
+            <p className="text-lg text-gray-600 max-w-md leading-relaxed">
+              {personalInfo.about}
             </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap items-center gap-4 animate-fade-in-up opacity-0 delay-400">
-              <button
-                onClick={() => scrollToSection("projects")}
-                className="group px-8 py-4 bg-[#7c3aed] text-white font-semibold rounded-full btn-glow hover:bg-[#a78bfa] transition-all duration-300 flex items-center gap-2"
-              >
-                View My Work
-                <ArrowUpRight />
+            <div className="flex flex-wrap gap-4">
+              <button onClick={() => scrollToSection("projects")} className="btn-primary">
+                <PlayIcon />
+                View Projects
               </button>
-              <a
-                href={`https://mail.google.com/mail/?view=cm&to=${personalInfo.email}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-8 py-4 rounded-full glass glass-hover font-semibold text-white transition-all duration-300"
-              >
-                Contact Me
-              </a>
+            </div>
+          </div>
+
+          {/* Right - 3D Character with Floating Elements */}
+          <div className="relative h-[500px] lg:h-[600px] animate-fade-in-up delay-200">
+            {/* Floating UI Elements */}
+            <div className="floating-element top-10 left-0 animate-float" style={{ animationDelay: "0s" }}>
+              <div className="flex items-center gap-2">
+                <div className="w-6 h-6 rounded bg-blue-500"></div>
+                <div className="w-6 h-6 rounded bg-purple-500"></div>
+                <div className="w-6 h-6 rounded bg-pink-500"></div>
+              </div>
             </div>
 
-            {/* Social Links */}
-            <div className="flex items-center gap-6 pt-4 animate-fade-in-up opacity-0 delay-500">
-              <span className="text-sm text-gray-500 uppercase tracking-widest">Follow</span>
-              <div className="h-px w-12 bg-gray-700" />
-              <div className="flex items-center gap-4">
-                {[
-                  { icon: <LinkedInIcon />, href: personalInfo.linkedin, label: "LinkedIn" },
-                  { icon: <GitHubIcon />, href: personalInfo.github, label: "GitHub" },
-                  { icon: <InstagramIcon />, href: personalInfo.instagram, label: "Instagram" },
-                  { icon: <EmailIcon />, href: `https://mail.google.com/mail/?view=cm&to=${personalInfo.email}`, label: "Email" },
-                ].map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-11 h-11 rounded-full glass glass-hover flex items-center justify-center text-gray-400 hover:text-[#7c3aed] transition-all duration-300"
-                    aria-label={social.label}
-                  >
-                    {social.icon}
-                  </a>
-                ))}
+            <div className="floating-element top-20 right-0 animate-float" style={{ animationDelay: "0.5s" }}>
+              <span className="floating-code">&lt;code /&gt;</span>
+            </div>
+
+            <div className="floating-element bottom-40 left-0 animate-float" style={{ animationDelay: "1s" }}>
+              <span className="text-2xl font-display">a a <span className="text-3xl font-bold">A</span></span>
+            </div>
+
+            <div className="floating-element bottom-20 right-10 animate-float" style={{ animationDelay: "1.5s" }}>
+              <div className="flex gap-2 text-xs">
+                <span className="px-2 py-1 bg-gray-100 rounded">HEX</span>
+                <span className="px-2 py-1 bg-blue-100 text-blue-600 rounded">RGB/AI</span>
               </div>
+            </div>
+
+            {/* 3D Character */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <Image
+                src="/PHOTO/hero.png"
+                alt="3D Developer Character"
+                width={450}
+                height={450}
+                className="object-contain drop-shadow-2xl"
+                priority
+              />
             </div>
           </div>
         </div>
       </div>
+    </section>
+  );
+}
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
-        <span className="text-xs text-gray-500 uppercase tracking-widest">Scroll</span>
-        <ArrowDown />
+// =====================================================
+// SERVICES SECTION (BENTO GRID)
+// =====================================================
+
+function ServicesSection() {
+  const { ref, isVisible } = useIntersectionObserver();
+
+  return (
+    <section id="services" className="py-20 bg-[#f5f5f5]">
+      <div ref={ref} className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className={`text-center mb-16 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
+          <p className="section-title">Services</p>
+          <h2 className="section-heading">What I Offer</h2>
+        </div>
+
+        <div className={`grid grid-cols-2 md:grid-cols-3 gap-4 ${isVisible ? "animate-fade-in-up delay-200" : "opacity-0"}`}>
+          {services.map((service, index) => (
+            <div
+              key={service.title}
+              className={`bento-card ${service.color} ${index === 0 ? "col-span-2 md:col-span-1" : ""}`}
+            >
+              <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${service.color === "bento-light" || service.color === "bento-gray" ? "bg-blue-100 text-blue-600" : "bg-white/20"}`}>
+                {service.icon}
+              </div>
+              <h3 className="font-display text-lg font-bold mb-2">{service.title}</h3>
+              <p className={`text-sm ${service.color === "bento-light" || service.color === "bento-gray" ? "text-gray-600" : "text-white/80"}`}>
+                {service.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// =====================================================
+// PROJECTS SECTION
+// =====================================================
+
+function ProjectsSection() {
+  const { ref, isVisible } = useIntersectionObserver();
+
+  return (
+    <section id="projects" className="py-20 bg-white">
+      <div ref={ref} className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className={`text-center mb-16 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
+          <p className="section-title">Portfolio</p>
+          <h2 className="section-heading">Featured Projects</h2>
+        </div>
+
+        <div className={`grid md:grid-cols-2 gap-8 ${isVisible ? "animate-fade-in-up delay-200" : "opacity-0"}`}>
+          {projects.map((project) => (
+            <a
+              key={project.id}
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group card overflow-hidden"
+            >
+              <div className="aspect-[16/10] relative overflow-hidden">
+                <Image
+                  src={project.thumbnail}
+                  alt={project.title}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-2">
+                  <h3 className="font-display text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                    {project.title}
+                  </h3>
+                  <ExternalLinkIcon />
+                </div>
+                <p className="text-gray-600 text-sm mb-4">{project.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {project.technologies.map((tech) => (
+                    <span key={tech} className="px-3 py-1 text-xs font-medium bg-gray-100 text-gray-700 rounded-full">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -572,378 +538,40 @@ function AboutSection() {
   const { ref, isVisible } = useIntersectionObserver();
 
   return (
-    <section id="about" className="py-32 px-6 lg:px-12 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #050a15 0%, #0a1628 100%)' }}>
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#7c3aed]/30 to-transparent" />
-
-      <div ref={ref} className="max-w-7xl mx-auto">
+    <section id="about" className="py-20 bg-[#f5f5f5]">
+      <div ref={ref} className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left - Section title */}
-          <div className={`${isVisible ? "animate-slide-in-left opacity-100" : "opacity-0"}`}>
-            <span className="text-[#7c3aed] text-sm font-semibold uppercase tracking-widest">About Me</span>
-            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white mt-4 leading-tight">
-              Crafting Digital<br />
-              <span className="gradient-text">Experiences</span>
+          <div className={`${isVisible ? "animate-slide-in-left" : "opacity-0"}`}>
+            <p className="section-title">About Me</p>
+            <h2 className="section-heading mb-6">
+              Building digital experiences that matter
             </h2>
-            <p className="text-lg text-gray-400 mt-4">Building modern, fast & reliable web solutions for businesses.</p>
-            <div className="line-accent mt-6" />
-          </div>
-
-          {/* Right - Content */}
-          <div className={`space-y-6 ${isVisible ? "animate-fade-in-up opacity-100 delay-200" : "opacity-0"}`}>
-            <p className="text-lg text-gray-400 leading-relaxed">
-              {personalInfo.about}
+            <p className="text-gray-600 leading-relaxed mb-6">
+              I&apos;m a web developer based in {personalInfo.location}, passionate about building modern, interactive web experiences. I enjoy working across the full stack — from crafting pixel-perfect frontends to architecting robust backend systems.
+            </p>
+            <p className="text-gray-600 leading-relaxed">
+              With expertise in React, Next.js, and Supabase, I turn ideas into functional, user-friendly applications that help businesses grow and succeed online.
             </p>
           </div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
-// =====================================================
-// SERVICES SECTION
-// =====================================================
-
-function ServicesSection() {
-  const { ref, isVisible } = useIntersectionObserver();
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % services.length);
-    }, 2000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const getCardStyle = (index: number) => {
-    const diff = index - activeIndex;
-    const totalCards = services.length;
-
-    // Handle wrap-around for circular carousel
-    let adjustedDiff = diff;
-    if (diff > totalCards / 2) adjustedDiff = diff - totalCards;
-    if (diff < -totalCards / 2) adjustedDiff = diff + totalCards;
-
-    const isActive = adjustedDiff === 0;
-    const isAdjacent = Math.abs(adjustedDiff) === 1;
-    const isSecondary = Math.abs(adjustedDiff) === 2;
-
-    const translateX = adjustedDiff * 280;
-    const scale = isActive ? 1 : isAdjacent ? 0.85 : isSecondary ? 0.7 : 0.6;
-    const opacity = isActive ? 1 : isAdjacent ? 0.7 : isSecondary ? 0.4 : 0;
-    const zIndex = isActive ? 30 : isAdjacent ? 20 : 10;
-
-    return {
-      transform: `translateX(${translateX}px) scale(${scale})`,
-      opacity,
-      zIndex,
-    };
-  };
-
-  return (
-    <section id="services" className="py-32 px-6 lg:px-12 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #0a1628 0%, #050a15 100%)' }}>
-      <div ref={ref} className="max-w-7xl mx-auto relative z-10">
-        <div className={`text-center mb-20 ${isVisible ? "animate-fade-in-up opacity-100" : "opacity-0"}`}>
-          <span className="text-[#7c3aed] text-sm font-semibold uppercase tracking-widest">Services</span>
-          <h2 className="font-display text-4xl sm:text-5xl font-bold text-white mt-4">
-            What I <span className="gradient-text">Offer</span>
-          </h2>
-          <div className="line-accent mx-auto mt-6" />
-        </div>
-
-        {/* Carousel Container */}
-        <div className="relative h-[420px] flex items-center justify-center">
-          {services.map((service, index) => (
-            <div
-              key={service.title}
-              className="absolute w-[260px] transition-all duration-500 ease-out cursor-pointer"
-              style={getCardStyle(index)}
-              onClick={() => setActiveIndex(index)}
-            >
-              <div className={`rounded-3xl overflow-hidden ${index === activeIndex ? 'shadow-2xl shadow-[#7c3aed]/20' : ''}`}>
-                {/* Card Image Area */}
-                <div className="h-[240px] relative overflow-hidden">
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628] via-transparent to-transparent" />
-                </div>
-
-                {/* Card Content */}
-                <div className="bg-[#0a1628]/90 backdrop-blur-sm p-6">
-                  <h3 className={`font-display text-lg font-bold mb-2 italic ${index === activeIndex ? 'text-[#7c3aed]' : 'text-white'}`}>
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-400 text-sm leading-relaxed line-clamp-2">
-                    {service.description}
-                  </p>
-                </div>
-              </div>
+          <div className={`grid grid-cols-2 gap-4 ${isVisible ? "animate-slide-in-right" : "opacity-0"}`}>
+            <div className="card p-6 text-center">
+              <div className="text-4xl font-display font-bold text-blue-600 mb-2">2+</div>
+              <div className="text-gray-600 text-sm">Years Experience</div>
             </div>
-          ))}
-        </div>
-
-        {/* Dots Indicator */}
-        <div className="flex justify-center gap-2 mt-8">
-          {services.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setActiveIndex(index)}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                index === activeIndex ? 'w-8 bg-[#7c3aed]' : 'bg-gray-600 hover:bg-gray-500'
-              }`}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// =====================================================
-// SKILLS SECTION
-// =====================================================
-
-function SkillsSection() {
-  const { ref, isVisible } = useIntersectionObserver();
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % skills.length);
-    }, 2000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const getCardStyle = (index: number) => {
-    const diff = index - activeIndex;
-    const totalCards = skills.length;
-
-    let adjustedDiff = diff;
-    if (diff > totalCards / 2) adjustedDiff = diff - totalCards;
-    if (diff < -totalCards / 2) adjustedDiff = diff + totalCards;
-
-    const isActive = adjustedDiff === 0;
-    const isAdjacent = Math.abs(adjustedDiff) === 1;
-    const isSecondary = Math.abs(adjustedDiff) === 2;
-
-    const translateX = adjustedDiff * 280;
-    const scale = isActive ? 1 : isAdjacent ? 0.85 : isSecondary ? 0.7 : 0.6;
-    const opacity = isActive ? 1 : isAdjacent ? 0.7 : isSecondary ? 0.4 : 0;
-    const zIndex = isActive ? 30 : isAdjacent ? 20 : 10;
-
-    return {
-      transform: `translateX(${translateX}px) scale(${scale})`,
-      opacity,
-      zIndex,
-    };
-  };
-
-  return (
-    <section id="skills" className="py-32 px-6 lg:px-12 bg-[#050a15] relative overflow-hidden">
-      <div className="absolute inset-0 dot-grid opacity-20" />
-
-      <div ref={ref} className="max-w-7xl mx-auto relative z-10">
-        <div className={`text-center mb-20 ${isVisible ? "animate-fade-in-up opacity-100" : "opacity-0"}`}>
-          <span className="text-[#7c3aed] text-sm font-semibold uppercase tracking-widest">Skills</span>
-          <h2 className="font-display text-4xl sm:text-5xl font-bold text-white mt-4">
-            My <span className="gradient-text">Expertise</span>
-          </h2>
-          <div className="line-accent mx-auto mt-6" />
-        </div>
-
-        {/* Carousel Container */}
-        <div className="relative h-[420px] flex items-center justify-center">
-          {skills.map((skill, index) => (
-            <div
-              key={skill.name}
-              className="absolute w-[260px] transition-all duration-500 ease-out cursor-pointer"
-              style={getCardStyle(index)}
-              onClick={() => setActiveIndex(index)}
-            >
-              <div className={`rounded-3xl overflow-hidden ${index === activeIndex ? 'shadow-2xl shadow-[#7c3aed]/20' : ''}`}>
-                {/* Card Image Area */}
-                <div className="h-[240px] relative overflow-hidden">
-                  <Image
-                    src={skill.image}
-                    alt={skill.name}
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628] via-transparent to-transparent" />
-                </div>
-
-                {/* Card Content */}
-                <div className="bg-[#0a1628]/90 backdrop-blur-sm p-6">
-                  <h3 className={`font-display text-lg font-bold mb-2 italic ${index === activeIndex ? 'text-[#7c3aed]' : 'text-white'}`}>
-                    {skill.name}
-                  </h3>
-                  <p className="text-gray-400 text-sm leading-relaxed line-clamp-2">
-                    {skill.description}
-                  </p>
-                </div>
-              </div>
+            <div className="card p-6 text-center">
+              <div className="text-4xl font-display font-bold text-purple-600 mb-2">10+</div>
+              <div className="text-gray-600 text-sm">Projects Done</div>
             </div>
-          ))}
-        </div>
-
-        {/* Dots Indicator */}
-        <div className="flex justify-center gap-2 mt-8">
-          {skills.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setActiveIndex(index)}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                index === activeIndex ? 'w-8 bg-[#7c3aed]' : 'bg-gray-600 hover:bg-gray-500'
-              }`}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// =====================================================
-// PROJECTS SECTION
-// =====================================================
-
-function ProjectCard({ project, index, isVisible }: { project: Project; index: number; isVisible: boolean }) {
-  return (
-    <div
-      className={`group gradient-border rounded-3xl overflow-hidden card-hover ${isVisible ? "animate-fade-in-up opacity-100" : "opacity-0"}`}
-      style={{ animationDelay: `${index * 150}ms` }}
-    >
-      {/* Project image area */}
-      <div className="aspect-[16/10] relative overflow-hidden">
-        <Image
-          src={project.thumbnail}
-          alt={project.title}
-          fill
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-
-        {/* Hover overlay */}
-        <div className="absolute inset-0 bg-[#050a15]/80 opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center">
-          <a
-            href={project.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-14 h-14 rounded-full glass flex items-center justify-center text-white hover:text-[#7c3aed] hover:scale-110 transition-all duration-300"
-          >
-            <ExternalLinkIcon />
-          </a>
-        </div>
-      </div>
-
-      {/* Content */}
-      <div className="p-8">
-        <a href={project.url} target="_blank" rel="noopener noreferrer">
-          <h3 className="font-display text-2xl font-bold text-white group-hover:text-[#7c3aed] transition-colors mb-3">
-            {project.title}
-          </h3>
-        </a>
-        <p className="text-gray-400 mb-6 line-clamp-2">{project.description}</p>
-        <div className="flex flex-wrap gap-2">
-          {project.technologies.map((tech) => (
-            <span key={tech} className="px-4 py-1.5 text-xs font-medium bg-[#7c3aed]/10 text-[#7c3aed] rounded-full">
-              {tech}
-            </span>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function ProjectsSection() {
-  const { ref, isVisible } = useIntersectionObserver();
-
-  return (
-    <section id="projects" className="py-32 px-6 lg:px-12" style={{ background: 'linear-gradient(180deg, #0a1628 0%, #050a15 100%)' }}>
-      <div ref={ref} className="max-w-7xl mx-auto">
-        <div className={`text-center mb-16 ${isVisible ? "animate-fade-in-up opacity-100" : "opacity-0"}`}>
-          <span className="text-[#7c3aed] text-sm font-semibold uppercase tracking-widest">Portfolio</span>
-          <h2 className="font-display text-4xl sm:text-5xl font-bold text-white mt-4">
-            Featured <span className="gradient-text">Work</span>
-          </h2>
-          <div className="line-accent mx-auto mt-6" />
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} isVisible={isVisible} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// =====================================================
-// TESTIMONIALS SECTION
-// =====================================================
-
-function QuoteIcon() {
-  return (
-    <svg fill="currentColor" viewBox="0 0 24 24" width="32" height="32" className="text-[#7c3aed]/30">
-      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-    </svg>
-  );
-}
-
-function TestimonialCard({ testimonial, index, isVisible }: { testimonial: Testimonial; index: number; isVisible: boolean }) {
-  return (
-    <div
-      className={`gradient-border rounded-2xl p-8 card-hover ${isVisible ? "animate-fade-in-up opacity-100" : "opacity-0"}`}
-      style={{ animationDelay: `${index * 150}ms` }}
-    >
-      <QuoteIcon />
-      <p className="text-gray-300 leading-relaxed mt-4 mb-6 italic">
-        &ldquo;{testimonial.feedback}&rdquo;
-      </p>
-      <div className="flex items-center gap-4">
-        <div className="w-12 h-12 rounded-full overflow-hidden relative">
-          <Image
-            src={testimonial.image}
-            alt={testimonial.name}
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div>
-          <h4 className="font-display font-bold text-white">{testimonial.name}</h4>
-          <p className="text-sm text-gray-400">{testimonial.role}, {testimonial.company}</p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function TestimonialsSection() {
-  const { ref, isVisible } = useIntersectionObserver();
-
-  return (
-    <section id="testimonials" className="py-32 px-6 lg:px-12 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #050a15 0%, #0a1628 100%)' }}>
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#7c3aed]/30 to-transparent" />
-      <div className="absolute top-1/2 left-0 w-[400px] h-[400px] rounded-full bg-[#7c3aed]/5 blur-[100px]" />
-
-      <div ref={ref} className="max-w-7xl mx-auto relative z-10">
-        <div className={`text-center mb-16 ${isVisible ? "animate-fade-in-up opacity-100" : "opacity-0"}`}>
-          <span className="text-[#7c3aed] text-sm font-semibold uppercase tracking-widest">Testimonials</span>
-          <h2 className="font-display text-4xl sm:text-5xl font-bold text-white mt-4">
-            What Clients <span className="gradient-text">Say</span>
-          </h2>
-          <div className="line-accent mx-auto mt-6" />
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <TestimonialCard key={testimonial.id} testimonial={testimonial} index={index} isVisible={isVisible} />
-          ))}
+            <div className="card p-6 text-center">
+              <div className="text-4xl font-display font-bold text-pink-600 mb-2">5+</div>
+              <div className="text-gray-600 text-sm">Happy Clients</div>
+            </div>
+            <div className="card p-6 text-center">
+              <div className="text-4xl font-display font-bold text-green-600 mb-2">100%</div>
+              <div className="text-gray-600 text-sm">Satisfaction</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -958,51 +586,46 @@ function ContactSection() {
   const { ref, isVisible } = useIntersectionObserver();
 
   return (
-    <section id="contact" className="py-32 px-6 lg:px-12 bg-[#050a15] relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#7c3aed]/30 to-transparent" />
-      <div className="absolute bottom-1/2 right-0 w-[500px] h-[500px] rounded-full bg-[#7c3aed]/5 blur-[100px]" />
+    <section id="contact" className="py-20 bg-white">
+      <div ref={ref} className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className={`text-center max-w-2xl mx-auto ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
+          <p className="section-title">Contact</p>
+          <h2 className="section-heading mb-6">Let&apos;s work together</h2>
+          <p className="text-gray-600 mb-8">
+            Have a project in mind? I&apos;d love to hear about it. Send me a message and let&apos;s create something amazing together.
+          </p>
 
-      <div ref={ref} className="max-w-7xl mx-auto relative z-10">
-        <div className={`text-center mb-16 ${isVisible ? "animate-fade-in-up opacity-100" : "opacity-0"}`}>
-          <span className="text-[#7c3aed] text-sm font-semibold uppercase tracking-widest">Contact</span>
-          <h2 className="font-display text-4xl sm:text-5xl font-bold text-white mt-4">
-            Let&apos;s Work <span className="gradient-text">Together</span>
-          </h2>
-          <div className="line-accent mx-auto mt-6" />
-        </div>
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
+            <a
+              href={`https://mail.google.com/mail/?view=cm&to=${personalInfo.email}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+            >
+              <EmailIcon />
+              Get in Touch
+            </a>
+            <a
+              href={personalInfo.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary"
+            >
+              <LinkedInIcon />
+              LinkedIn
+            </a>
+          </div>
 
-        <div className="max-w-xl mx-auto">
-          {/* Contact Info */}
-          <div className={`space-y-6 ${isVisible ? "animate-fade-in-up opacity-100 delay-200" : "opacity-0"}`}>
-            <div className="gradient-border rounded-2xl p-8">
-              <h3 className="font-display text-xl font-bold text-white mb-6">Contact Information</h3>
-              <div className="space-y-5">
-                {[
-                  { icon: <EmailIcon />, label: personalInfo.email, href: `https://mail.google.com/mail/?view=cm&to=${personalInfo.email}` },
-                  { icon: <LinkedInIcon />, label: "LinkedIn Profile", href: personalInfo.linkedin },
-                  { icon: <GitHubIcon />, label: "GitHub Profile", href: personalInfo.github },
-                  { icon: <InstagramIcon />, label: "Instagram Profile", href: personalInfo.instagram },
-                ].map((item) => (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-4 text-gray-400 hover:text-[#7c3aed] transition-colors group"
-                  >
-                    <span className="w-10 h-10 rounded-lg bg-[#7c3aed]/10 flex items-center justify-center text-[#7c3aed] group-hover:bg-[#7c3aed]/20 transition-colors">
-                      {item.icon}
-                    </span>
-                    <span className="underline-hover">{item.label}</span>
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            <div className="gradient-border rounded-2xl p-8">
-              <h3 className="font-display text-xl font-bold text-white mb-4">Location</h3>
-              <p className="text-gray-400">{personalInfo.location}</p>
-            </div>
+          <div className="flex justify-center gap-6">
+            <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-600 transition-colors">
+              <GitHubIcon />
+            </a>
+            <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-600 transition-colors">
+              <LinkedInIcon />
+            </a>
+            <a href={`mailto:${personalInfo.email}`} className="text-gray-400 hover:text-blue-600 transition-colors">
+              <EmailIcon />
+            </a>
           </div>
         </div>
       </div>
@@ -1016,28 +639,15 @@ function ContactSection() {
 
 function Footer() {
   return (
-    <footer className="py-8 px-6 lg:px-12 bg-[#030712] border-t border-gray-900">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-        <p className="text-gray-500 text-sm">
-          © {new Date().getFullYear()} <span className="text-white">{personalInfo.name}</span>. All rights reserved.
-        </p>
-        <div className="flex items-center gap-6">
-          {[
-            { icon: <GitHubIcon />, href: personalInfo.github },
-            { icon: <LinkedInIcon />, href: personalInfo.linkedin },
-            { icon: <InstagramIcon />, href: personalInfo.instagram },
-            { icon: <EmailIcon />, href: `https://mail.google.com/mail/?view=cm&to=${personalInfo.email}` },
-          ].map((social, index) => (
-            <a
-              key={index}
-              href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-500 hover:text-[#7c3aed] transition-colors"
-            >
-              {social.icon}
-            </a>
-          ))}
+    <footer className="py-8 bg-[#f5f5f5] border-t border-gray-200">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-gray-500 text-sm">
+            © {new Date().getFullYear()} {personalInfo.name}. All rights reserved.
+          </p>
+          <p className="text-gray-400 text-sm">
+            Built with Next.js & Tailwind CSS
+          </p>
         </div>
       </div>
     </footer>
@@ -1054,11 +664,9 @@ export default function Home() {
       <NavBar />
       <main>
         <HeroSection />
-        <AboutSection />
         <ServicesSection />
-        <SkillsSection />
         <ProjectsSection />
-        <TestimonialsSection />
+        <AboutSection />
         <ContactSection />
       </main>
       <Footer />
