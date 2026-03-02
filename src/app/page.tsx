@@ -33,6 +33,15 @@ interface Service {
   description: string;
 }
 
+interface Testimonial {
+  id: number;
+  name: string;
+  role: string;
+  company: string;
+  feedback: string;
+  image: string;
+}
+
 // =====================================================
 // DATA CONSTANTS
 // =====================================================
@@ -180,12 +189,40 @@ const services: Service[] = [
   },
 ];
 
+const testimonials: Testimonial[] = [
+  {
+    id: 1,
+    name: "Manikanta",
+    role: "Founder",
+    company: "The Precious Interiors",
+    feedback: "Jonathan delivered an exceptional website that perfectly captures our brand's luxury aesthetic. His attention to detail and understanding of our vision made the entire process seamless.",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
+  },
+  {
+    id: 2,
+    name: "Gnana",
+    role: "Music Director",
+    company: "Mr.Gnana",
+    feedback: "Working with Jonathan was a fantastic experience. He created a portfolio that truly represents my work and has helped me connect with more clients. Highly recommended!",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80",
+  },
+  {
+    id: 3,
+    name: "Rahul Kumar",
+    role: "CEO",
+    company: "Elvenwood Interior",
+    feedback: "Professional, creative, and reliable. Jonathan transformed our online presence with a stunning website that our clients love. The results exceeded our expectations.",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80",
+  },
+];
+
 const navItems: NavItem[] = [
   { id: "hero", label: "Home" },
   { id: "about", label: "About" },
   { id: "services", label: "Services" },
   { id: "skills", label: "Skills" },
   { id: "projects", label: "Work" },
+  { id: "testimonials", label: "Testimonials" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -863,6 +900,73 @@ function ProjectsSection() {
 }
 
 // =====================================================
+// TESTIMONIALS SECTION
+// =====================================================
+
+function QuoteIcon() {
+  return (
+    <svg fill="currentColor" viewBox="0 0 24 24" width="32" height="32" className="text-[#ff6b35]/30">
+      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+    </svg>
+  );
+}
+
+function TestimonialCard({ testimonial, index, isVisible }: { testimonial: Testimonial; index: number; isVisible: boolean }) {
+  return (
+    <div
+      className={`gradient-border rounded-2xl p-8 card-hover ${isVisible ? "animate-fade-in-up opacity-100" : "opacity-0"}`}
+      style={{ animationDelay: `${index * 150}ms` }}
+    >
+      <QuoteIcon />
+      <p className="text-gray-300 leading-relaxed mt-4 mb-6 italic">
+        &ldquo;{testimonial.feedback}&rdquo;
+      </p>
+      <div className="flex items-center gap-4">
+        <div className="w-12 h-12 rounded-full overflow-hidden relative">
+          <Image
+            src={testimonial.image}
+            alt={testimonial.name}
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div>
+          <h4 className="font-display font-bold text-white">{testimonial.name}</h4>
+          <p className="text-sm text-gray-400">{testimonial.role}, {testimonial.company}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function TestimonialsSection() {
+  const { ref, isVisible } = useIntersectionObserver();
+
+  return (
+    <section id="testimonials" className="py-32 px-6 lg:px-12 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #050a15 0%, #0a1628 100%)' }}>
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#ff6b35]/30 to-transparent" />
+      <div className="absolute top-1/2 left-0 w-[400px] h-[400px] rounded-full bg-[#ff6b35]/5 blur-[100px]" />
+
+      <div ref={ref} className="max-w-7xl mx-auto relative z-10">
+        <div className={`text-center mb-16 ${isVisible ? "animate-fade-in-up opacity-100" : "opacity-0"}`}>
+          <span className="text-[#ff6b35] text-sm font-semibold uppercase tracking-widest">Testimonials</span>
+          <h2 className="font-display text-4xl sm:text-5xl font-bold text-white mt-4">
+            What Clients <span className="gradient-text">Say</span>
+          </h2>
+          <div className="line-accent mx-auto mt-6" />
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {testimonials.map((testimonial, index) => (
+            <TestimonialCard key={testimonial.id} testimonial={testimonial} index={index} isVisible={isVisible} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// =====================================================
 // CONTACT SECTION
 // =====================================================
 
@@ -970,6 +1074,7 @@ export default function Home() {
         <ServicesSection />
         <SkillsSection />
         <ProjectsSection />
+        <TestimonialsSection />
         <ContactSection />
       </main>
       <Footer />
