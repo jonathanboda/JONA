@@ -531,21 +531,51 @@ function ServicesSection() {
           <h2 className="section-heading">What I Offer</h2>
         </div>
 
-        <div className={`grid grid-cols-2 md:grid-cols-3 gap-4 ${isVisible ? "animate-fade-in-up delay-200" : "opacity-0"}`}>
-          {services.map((service, index) => (
-            <div
-              key={service.title}
-              className={`bento-card ${service.color} ${index === 0 ? "col-span-2 md:col-span-1" : ""}`}
-            >
-              <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${service.color === "bento-light" || service.color === "bento-gray" ? "bg-blue-100 text-blue-600" : "bg-white/20"}`}>
-                {service.icon}
-              </div>
-              <h3 className="font-display text-lg font-bold mb-2">{service.title}</h3>
-              <p className={`text-sm ${service.color === "bento-light" || service.color === "bento-gray" ? "text-gray-600" : "text-white/80"}`}>
-                {service.description}
-              </p>
+        <div className={`grid grid-cols-12 gap-4 ${isVisible ? "animate-fade-in-up delay-200" : "opacity-0"}`}>
+          {/* Card 1 - Dark, left top */}
+          <div className="col-span-6 md:col-span-3 bg-gray-900 text-white rounded-3xl p-6 flex flex-col justify-between min-h-[200px]">
+            <span className="text-xs text-gray-400 uppercase tracking-wide">Frontend</span>
+            <div>
+              <h3 className="font-display text-xl font-bold mb-3">Business Websites</h3>
+              <span className="text-sm text-blue-400 cursor-pointer hover:underline">Learn more</span>
             </div>
-          ))}
+          </div>
+
+          {/* Card 2 - Dark, center large */}
+          <div className="col-span-6 md:col-span-5 row-span-2 bg-gray-900 text-white rounded-3xl p-6 flex flex-col justify-between min-h-[250px] md:min-h-[420px]">
+            <span className="text-xs text-gray-400 uppercase tracking-wide">Fullstack</span>
+            <div>
+              <h3 className="font-display text-2xl md:text-3xl font-bold mb-3">Web Applications & Custom Solutions</h3>
+              <span className="text-sm text-blue-400 cursor-pointer hover:underline">Learn more</span>
+            </div>
+          </div>
+
+          {/* Card 3 - Light, right top */}
+          <div className="col-span-6 md:col-span-4 bg-white rounded-3xl p-6 flex flex-col justify-between min-h-[200px] shadow-sm">
+            <span className="text-xs text-gray-400 uppercase tracking-wide">Design</span>
+            <div>
+              <h3 className="font-display text-xl font-bold text-gray-900 mb-3">Landing Pages</h3>
+              <span className="text-sm text-blue-600 cursor-pointer hover:underline">Learn more</span>
+            </div>
+          </div>
+
+          {/* Card 4 - Light, left bottom */}
+          <div className="col-span-6 md:col-span-3 bg-white rounded-3xl p-6 flex flex-col justify-between min-h-[200px] shadow-sm">
+            <span className="text-xs text-gray-400 uppercase tracking-wide">Creative</span>
+            <div>
+              <h3 className="font-display text-xl font-bold text-gray-900 mb-3">Portfolio Sites</h3>
+              <span className="text-sm text-blue-600 cursor-pointer hover:underline">Learn more</span>
+            </div>
+          </div>
+
+          {/* Card 5 - Green accent, right bottom */}
+          <div className="col-span-6 md:col-span-4 bg-lime-300 rounded-3xl p-6 flex flex-col justify-between min-h-[200px]">
+            <span className="text-xs text-gray-700 uppercase tracking-wide">Backend</span>
+            <div>
+              <h3 className="font-display text-xl font-bold text-gray-900 mb-3">Admin Dashboards & APIs</h3>
+              <span className="text-sm text-gray-700 cursor-pointer hover:underline">Learn more</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
