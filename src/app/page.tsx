@@ -628,23 +628,9 @@ function AboutSection() {
             <p className="text-gray-600 leading-relaxed mb-4 max-w-md">
               I&apos;m a web developer based in {personalInfo.location}, passionate about building modern, interactive web experiences. I enjoy working across the full stack — from crafting pixel-perfect frontends to architecting robust backend systems.
             </p>
-            <p className="text-gray-600 leading-relaxed mb-8 max-w-md">
+            <p className="text-gray-600 leading-relaxed max-w-md">
               With expertise in React, Next.js, and Supabase, I turn ideas into functional, user-friendly applications that help businesses grow and succeed online.
             </p>
-            <div className="flex flex-wrap gap-6 text-center">
-              <div>
-                <div className="text-3xl font-display font-bold text-blue-600">2+</div>
-                <div className="text-gray-500 text-sm">Years Exp</div>
-              </div>
-              <div>
-                <div className="text-3xl font-display font-bold text-purple-600">10+</div>
-                <div className="text-gray-500 text-sm">Projects</div>
-              </div>
-              <div>
-                <div className="text-3xl font-display font-bold text-pink-600">5+</div>
-                <div className="text-gray-500 text-sm">Clients</div>
-              </div>
-            </div>
           </div>
 
           {/* Right - 3D Character with floating UI elements */}
