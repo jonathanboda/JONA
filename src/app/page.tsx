@@ -394,29 +394,94 @@ function HeroSection() {
             </div>
           </div>
 
-          {/* Right - 3D Character with Floating Elements */}
+          {/* Right - 3D Character Working on Laptop */}
           <div className="relative h-[500px] lg:h-[600px] animate-fade-in-up delay-200">
-            {/* Floating UI Elements */}
-            <div className="floating-element top-10 left-0 animate-float" style={{ animationDelay: "0s" }}>
-              <div className="flex items-center gap-2">
-                <div className="w-6 h-6 rounded bg-blue-500"></div>
-                <div className="w-6 h-6 rounded bg-purple-500"></div>
-                <div className="w-6 h-6 rounded bg-pink-500"></div>
+            {/* Screen glow reflection on face - positioned above character */}
+            <div
+              className="face-reflection"
+              style={{
+                top: "25%",
+                left: "50%",
+                transform: "translateX(-50%)",
+                width: "200px",
+                height: "120px",
+              }}
+            />
+
+            {/* Laptop screen with typing code - positioned where laptop would be */}
+            <div
+              className="laptop-screen"
+              style={{
+                bottom: "28%",
+                left: "50%",
+                transform: "translateX(-50%)",
+                width: "120px",
+                height: "70px",
+                zIndex: 10,
+              }}
+            >
+              <div className="code-typing">
+                <span className="code-line code-line-1">const dev = {`{`}</span>
+                <span className="code-line code-line-2">&nbsp;&nbsp;name: &quot;Jonathan&quot;,</span>
+                <span className="code-line code-line-3">&nbsp;&nbsp;skill: &quot;React&quot;,</span>
+                <span className="code-line code-line-4">{`}`};</span>
               </div>
             </div>
 
-            <div className="floating-element top-20 right-0 animate-float" style={{ animationDelay: "0.5s" }}>
-              <span className="floating-code">&lt;code /&gt;</span>
+            {/* Working status indicator */}
+            <div
+              className="working-indicator animate-float"
+              style={{
+                top: "15%",
+                right: "5%",
+                animationDelay: "0.5s",
+              }}
+            >
+              <span className="working-dot"></span>
+              <span className="text-gray-700">coding...</span>
             </div>
 
-            <div className="floating-element bottom-40 left-0 animate-float" style={{ animationDelay: "1s" }}>
-              <span className="text-2xl font-display">a a <span className="text-3xl font-bold">A</span></span>
+            {/* Floating code snippet */}
+            <div className="floating-element top-10 left-0 animate-float" style={{ animationDelay: "0s" }}>
+              <span className="floating-code">&lt;div&gt;</span>
             </div>
 
-            <div className="floating-element bottom-20 right-10 animate-float" style={{ animationDelay: "1.5s" }}>
-              <div className="flex gap-2 text-xs">
-                <span className="px-2 py-1 bg-gray-100 rounded">HEX</span>
-                <span className="px-2 py-1 bg-blue-100 text-blue-600 rounded">RGB/AI</span>
+            {/* Terminal output */}
+            <div
+              className="floating-element top-1/4 right-0 animate-float"
+              style={{ animationDelay: "0.8s" }}
+            >
+              <div className="flex items-center gap-2 text-xs">
+                <span className="w-2 h-2 rounded-full bg-green-500"></span>
+                <span className="font-mono text-gray-600">npm run dev</span>
+              </div>
+            </div>
+
+            {/* React icon floating */}
+            <div
+              className="floating-element bottom-1/3 left-5 animate-float"
+              style={{ animationDelay: "1.2s" }}
+            >
+              <svg viewBox="0 0 24 24" width="24" height="24" className="text-blue-500">
+                <circle cx="12" cy="12" r="2" fill="currentColor"/>
+                <ellipse cx="12" cy="12" rx="10" ry="4" stroke="currentColor" strokeWidth="1" fill="none" className="animate-spin" style={{ animationDuration: "10s" }}/>
+                <ellipse cx="12" cy="12" rx="10" ry="4" stroke="currentColor" strokeWidth="1" fill="none" transform="rotate(60 12 12)" className="animate-spin" style={{ animationDuration: "10s" }}/>
+                <ellipse cx="12" cy="12" rx="10" ry="4" stroke="currentColor" strokeWidth="1" fill="none" transform="rotate(120 12 12)" className="animate-spin" style={{ animationDuration: "10s" }}/>
+              </svg>
+            </div>
+
+            {/* Git commit indicator */}
+            <div
+              className="floating-element bottom-20 right-5 animate-float"
+              style={{ animationDelay: "1.5s" }}
+            >
+              <div className="flex items-center gap-2 text-xs">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2">
+                  <circle cx="12" cy="12" r="3"/>
+                  <line x1="12" y1="3" x2="12" y2="9"/>
+                  <line x1="12" y1="15" x2="12" y2="21"/>
+                </svg>
+                <span className="text-gray-600">committed</span>
               </div>
             </div>
 
@@ -424,7 +489,7 @@ function HeroSection() {
             <div className="absolute inset-0 flex items-center justify-center">
               <Image
                 src="/PHOTO/hero.png"
-                alt="3D Developer Character"
+                alt="3D Developer Character Working"
                 width={450}
                 height={450}
                 className="object-contain drop-shadow-2xl"
