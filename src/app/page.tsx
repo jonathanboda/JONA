@@ -137,11 +137,27 @@ const services: Service[] = [
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Client Name",
-    role: "Role",
-    company: "Company",
-    feedback: "Your testimonial feedback here.",
+    name: "Sarah Johnson",
+    role: "Founder",
+    company: "Elvenwood Interior",
+    feedback: "Jonathan delivered an exceptional website that perfectly captures our brand. His attention to detail and technical expertise made the entire process smooth and enjoyable.",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80",
+  },
+  {
+    id: 2,
+    name: "Mr. Gnana",
+    role: "Music Director",
+    company: "Independent Artist",
+    feedback: "Working with Jonathan was a great experience. He understood my vision and created a portfolio that truly represents my work as a music director.",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
+  },
+  {
+    id: 3,
+    name: "Priya Sharma",
+    role: "CEO",
+    company: "The Precious Interiors",
+    feedback: "Professional, responsive, and incredibly talented. Jonathan transformed our online presence with a stunning website that our clients love.",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80",
   },
 ];
 
@@ -748,6 +764,66 @@ function AboutSection() {
 }
 
 // =====================================================
+// TESTIMONIALS SECTION
+// =====================================================
+
+function TestimonialsSection() {
+  const { ref, isVisible } = useIntersectionObserver();
+
+  return (
+    <section id="testimonials" className="py-20 bg-white">
+      <div ref={ref} className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className={`text-center mb-16 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
+          <p className="section-title">Testimonials</p>
+          <h2 className="section-heading">What Clients Say</h2>
+        </div>
+
+        <div className={`grid md:grid-cols-3 gap-6 ${isVisible ? "animate-fade-in-up delay-200" : "opacity-0"}`}>
+          {testimonials.map((testimonial, index) => {
+            const cardStyles = [
+              "bg-blue-500 text-white",
+              "bg-white text-gray-900 shadow-md",
+              "bg-gray-900 text-white",
+            ];
+            const style = cardStyles[index % cardStyles.length];
+            const isLight = style.includes("bg-white");
+
+            return (
+              <div
+                key={testimonial.id}
+                className={`rounded-3xl p-6 flex flex-col justify-between min-h-[280px] ${style}`}
+              >
+                {/* Quote */}
+                <p className={`text-sm leading-relaxed mb-6 ${isLight ? "text-gray-600" : "text-white/90"}`}>
+                  &quot;{testimonial.feedback}&quot;
+                </p>
+
+                {/* Author */}
+                <div className="flex items-center gap-3">
+                  <Image
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    width={48}
+                    height={48}
+                    className="w-12 h-12 rounded-full object-cover"
+                  />
+                  <div>
+                    <h4 className="font-display font-bold">{testimonial.name}</h4>
+                    <p className={`text-xs ${isLight ? "text-gray-500" : "text-white/60"}`}>
+                      {testimonial.role}, {testimonial.company}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// =====================================================
 // CONTACT SECTION
 // =====================================================
 
@@ -836,6 +912,7 @@ export default function Home() {
         <ServicesSection />
         <ProjectsSection />
         <AboutSection />
+        <TestimonialsSection />
         <ContactSection />
       </main>
       <Footer />
