@@ -163,6 +163,7 @@ const testimonials: Testimonial[] = [
 
 const navItems: NavItem[] = [
   { id: "services", label: "Services" },
+  { id: "skills", label: "Skills" },
   { id: "projects", label: "Projects" },
   { id: "about", label: "About" },
   { id: "testimonials", label: "Testimonials" },
@@ -600,6 +601,124 @@ function ServicesSection() {
 }
 
 // =====================================================
+// SKILLS SECTION
+// =====================================================
+
+function SkillsSection() {
+  const { ref, isVisible } = useIntersectionObserver();
+
+  return (
+    <section id="skills" className="py-20 bg-white">
+      <div ref={ref} className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left - Text Content */}
+          <div className={`${isVisible ? "animate-slide-in-left" : "opacity-0"}`}>
+            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+              Building a<br />unified<br />language
+            </h2>
+            <p className="text-gray-600 leading-relaxed max-w-md">
+              Delivering consistent experiences across an entire product ecosystem demands a shared design language. I use modern technologies and best practices to build scalable, maintainable applications.
+            </p>
+          </div>
+
+          {/* Right - 3D Character with floating UI elements */}
+          <div className={`relative h-[400px] lg:h-[450px] ${isVisible ? "animate-slide-in-right" : "opacity-0"}`}>
+            {/* Code editor floating element */}
+            <div
+              className="floating-element animate-float bg-gray-900 text-white px-4 py-3 rounded-xl"
+              style={{ top: "5%", left: "20%", animationDelay: "0s" }}
+            >
+              <div className="flex items-center gap-2 mb-2">
+                <span className="w-2 h-2 rounded-full bg-red-500"></span>
+                <span className="w-2 h-2 rounded-full bg-yellow-500"></span>
+                <span className="w-2 h-2 rounded-full bg-green-500"></span>
+              </div>
+              <code className="text-xs text-cyan-400">&lt;div class=&quot;...&quot;&gt;</code>
+              <br />
+              <code className="text-xs text-cyan-400">&lt;/div&gt;</code>
+            </div>
+
+            {/* Checkmark badges */}
+            <div
+              className="floating-element animate-float"
+              style={{ top: "35%", left: "5%", animationDelay: "0.5s" }}
+            >
+              <div className="flex items-center gap-2">
+                <span className="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="white">
+                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                  </svg>
+                </span>
+                <span className="text-sm text-gray-600">React</span>
+              </div>
+            </div>
+
+            <div
+              className="floating-element animate-float"
+              style={{ top: "50%", left: "10%", animationDelay: "0.8s" }}
+            >
+              <div className="flex items-center gap-2">
+                <span className="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="white">
+                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                  </svg>
+                </span>
+                <span className="text-sm text-gray-600">Next.js</span>
+              </div>
+            </div>
+
+            <div
+              className="floating-element animate-float"
+              style={{ top: "65%", left: "5%", animationDelay: "1.1s" }}
+            >
+              <div className="flex items-center gap-2">
+                <span className="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="white">
+                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                  </svg>
+                </span>
+                <span className="text-sm text-gray-600">TypeScript</span>
+              </div>
+            </div>
+
+            {/* Code icon */}
+            <div
+              className="floating-element animate-float bg-blue-500 p-3 rounded-xl"
+              style={{ top: "40%", right: "10%", animationDelay: "0.3s" }}
+            >
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="white">
+                <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+              </svg>
+            </div>
+
+            {/* Gear icon */}
+            <div
+              className="floating-element animate-float"
+              style={{ top: "10%", right: "5%", animationDelay: "1s" }}
+            >
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="#3b82f6">
+                <path d="M19.14 12.94c.04-.31.06-.63.06-.94 0-.31-.02-.63-.06-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+              </svg>
+            </div>
+
+            {/* 3D Character Image */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <Image
+                src="/PHOTO/hero.png"
+                alt="3D Developer Character"
+                width={350}
+                height={350}
+                className="object-contain drop-shadow-xl"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// =====================================================
 // PROJECTS SECTION
 // =====================================================
 
@@ -911,6 +1030,7 @@ export default function Home() {
       <main>
         <HeroSection />
         <ServicesSection />
+        <SkillsSection />
         <ProjectsSection />
         <AboutSection />
         <TestimonialsSection />
