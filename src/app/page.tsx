@@ -668,28 +668,6 @@ function AboutSection() {
               </div>
             </div>
 
-            {/* Code badge - middle right */}
-            <div
-              className="floating-element animate-float"
-              style={{ top: "40%", right: "0%", animationDelay: "0.8s" }}
-            >
-              <div className="flex items-center gap-2 bg-gray-900 text-white px-3 py-2 rounded-full text-xs">
-                <span className="w-2 h-2 bg-green-400 rounded-full"></span>
-                Available
-              </div>
-            </div>
-
-            {/* Tech stack - bottom left */}
-            <div
-              className="floating-element animate-float"
-              style={{ bottom: "15%", left: "5%", animationDelay: "1.2s" }}
-            >
-              <div className="flex items-center gap-2">
-                <div className="w-6 h-6 rounded bg-blue-500"></div>
-                <div className="w-6 h-6 rounded bg-gray-900"></div>
-                <div className="w-6 h-6 rounded bg-cyan-500"></div>
-              </div>
-            </div>
 
             {/* Satisfaction - bottom right */}
             <div
