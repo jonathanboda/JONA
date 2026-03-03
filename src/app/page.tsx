@@ -638,7 +638,7 @@ function AboutSection() {
             {/* Years Experience - top left */}
             <div
               className="floating-element animate-float"
-              style={{ top: "10%", left: "0%", animationDelay: "0s" }}
+              style={{ top: "15%", left: "18%", animationDelay: "0s" }}
             >
               <div className="text-center">
                 <div className="text-2xl font-display font-bold text-blue-600">1+</div>
@@ -649,7 +649,7 @@ function AboutSection() {
             {/* Projects - top right */}
             <div
               className="floating-element animate-float"
-              style={{ top: "5%", right: "5%", animationDelay: "0.5s" }}
+              style={{ top: "10%", right: "18%", animationDelay: "0.5s" }}
             >
               <div className="text-center">
                 <div className="text-2xl font-display font-bold text-purple-600">7+</div>
@@ -660,7 +660,7 @@ function AboutSection() {
             {/* Clients - middle left */}
             <div
               className="floating-element animate-float"
-              style={{ top: "45%", left: "0%", animationDelay: "1s" }}
+              style={{ top: "45%", left: "12%", animationDelay: "1s" }}
             >
               <div className="text-center">
                 <div className="text-2xl font-display font-bold text-pink-600">5+</div>
@@ -672,7 +672,7 @@ function AboutSection() {
             {/* Satisfaction - bottom right */}
             <div
               className="floating-element animate-float"
-              style={{ bottom: "20%", right: "5%", animationDelay: "1.5s" }}
+              style={{ bottom: "30%", right: "12%", animationDelay: "1.5s" }}
             >
               <div className="text-center">
                 <div className="text-2xl font-display font-bold text-green-600">100%</div>
