@@ -708,10 +708,10 @@ function SkillsSection() {
             {/* 3D Character Image */}
             <div className="absolute inset-0 flex items-center justify-center">
               <Image
-                src="/PHOTO/hero.png"
-                alt="3D Developer Character"
-                width={350}
-                height={350}
+                src="/PHOTO/skill.png"
+                alt="3D Developer Character with Tablet"
+                width={380}
+                height={380}
                 className="object-contain drop-shadow-2xl"
               />
             </div>
