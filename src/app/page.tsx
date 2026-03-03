@@ -618,36 +618,88 @@ function AboutSection() {
   return (
     <section id="about" className="py-20 bg-[#f5f5f5]">
       <div ref={ref} className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left - Text Content */}
           <div className={`${isVisible ? "animate-slide-in-left" : "opacity-0"}`}>
-            <p className="section-title">About Me</p>
-            <h2 className="section-heading mb-6">
-              Building digital experiences that matter
+            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+              Discover<br />what we<br />build
             </h2>
-            <p className="text-gray-600 leading-relaxed mb-6">
-              I&apos;m a web developer based in {personalInfo.location}, passionate about building modern, interactive web experiences. I enjoy working across the full stack — from crafting pixel-perfect frontends to architecting robust backend systems.
+            <p className="text-gray-600 leading-relaxed mb-8 max-w-md">
+              I&apos;m a web developer based in {personalInfo.location}, passionate about building modern, interactive web experiences. Learn more about my process on the blog.
             </p>
-            <p className="text-gray-600 leading-relaxed">
-              With expertise in React, Next.js, and Supabase, I turn ideas into functional, user-friendly applications that help businesses grow and succeed online.
-            </p>
+            <button
+              onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
+              className="btn-primary"
+            >
+              View Projects
+            </button>
           </div>
 
-          <div className={`grid grid-cols-2 gap-4 ${isVisible ? "animate-slide-in-right" : "opacity-0"}`}>
-            <div className="card p-6 text-center">
-              <div className="text-4xl font-display font-bold text-blue-600 mb-2">2+</div>
-              <div className="text-gray-600 text-sm">Years Experience</div>
+          {/* Right - 3D Character with floating UI elements */}
+          <div className={`relative h-[450px] lg:h-[500px] ${isVisible ? "animate-slide-in-right" : "opacity-0"}`}>
+            {/* Floating chat bubble - top left */}
+            <div
+              className="floating-element animate-float"
+              style={{ top: "10%", left: "5%", animationDelay: "0s" }}
+            >
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="white">
+                    <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+                  </svg>
+                </div>
+                <div className="flex flex-col gap-1">
+                  <div className="w-16 h-2 bg-gray-300 rounded"></div>
+                  <div className="w-10 h-2 bg-gray-200 rounded"></div>
+                </div>
+              </div>
             </div>
-            <div className="card p-6 text-center">
-              <div className="text-4xl font-display font-bold text-purple-600 mb-2">10+</div>
-              <div className="text-gray-600 text-sm">Projects Done</div>
+
+            {/* Scenario badge - top right */}
+            <div
+              className="floating-element animate-float"
+              style={{ top: "15%", right: "0%", animationDelay: "0.5s" }}
+            >
+              <div className="flex items-center gap-2 bg-gray-900 text-white px-3 py-2 rounded-full text-xs">
+                <span className="w-2 h-2 bg-green-400 rounded-full"></span>
+                Scenario 0.1 ...
+              </div>
             </div>
-            <div className="card p-6 text-center">
-              <div className="text-4xl font-display font-bold text-pink-600 mb-2">5+</div>
-              <div className="text-gray-600 text-sm">Happy Clients</div>
+
+            {/* Message bubble - middle left */}
+            <div
+              className="floating-element animate-float"
+              style={{ top: "45%", left: "0%", animationDelay: "1s" }}
+            >
+              <div className="flex items-center gap-2">
+                <div className="w-6 h-6 rounded bg-yellow-400"></div>
+                <div className="flex flex-col gap-1">
+                  <div className="w-12 h-2 bg-gray-300 rounded"></div>
+                  <div className="w-8 h-2 bg-gray-200 rounded"></div>
+                </div>
+              </div>
             </div>
-            <div className="card p-6 text-center">
-              <div className="text-4xl font-display font-bold text-green-600 mb-2">100%</div>
-              <div className="text-gray-600 text-sm">Satisfaction</div>
+
+            {/* Username badge - bottom right */}
+            <div
+              className="floating-element animate-float"
+              style={{ bottom: "20%", right: "5%", animationDelay: "1.5s" }}
+            >
+              <div className="flex items-center gap-2">
+                <div className="w-6 h-6 rounded-full bg-gradient-to-br from-orange-400 to-red-500"></div>
+                <span className="text-sm font-medium text-gray-700">Username</span>
+              </div>
+            </div>
+
+            {/* 3D Character Image */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <Image
+                src="/PHOTO/about section .png"
+                alt="3D Character"
+                width={400}
+                height={400}
+                className="object-contain drop-shadow-xl"
+              />
             </div>
           </div>
         </div>
