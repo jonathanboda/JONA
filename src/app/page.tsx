@@ -623,10 +623,10 @@ function SkillsSection() {
 
           {/* Right - 3D Character with floating UI elements */}
           <div className={`relative h-[400px] lg:h-[450px] ${isVisible ? "animate-slide-in-right" : "opacity-0"}`}>
-            {/* Code editor floating element */}
+            {/* Code editor floating element - BEHIND character */}
             <div
-              className="absolute animate-float bg-[#1a1a2e] text-white px-4 py-3 rounded-2xl shadow-2xl border border-gray-700/50"
-              style={{ top: "2%", left: "10%", animationDelay: "0s" }}
+              className="absolute animate-float bg-[#1a1a2e] text-white px-4 py-3 rounded-2xl shadow-2xl border border-gray-700/50 z-0"
+              style={{ top: "5%", left: "5%", animationDelay: "0s" }}
             >
               <div className="flex items-center gap-1.5 mb-3">
                 <span className="w-3 h-3 rounded-full bg-[#ff5f56]"></span>
@@ -640,78 +640,88 @@ function SkillsSection() {
               </div>
             </div>
 
-            {/* Checklist card with multiple items */}
+            {/* Checklist card - BEHIND character */}
             <div
-              className="absolute animate-float bg-white rounded-2xl shadow-xl p-4 border border-gray-100"
-              style={{ top: "35%", left: "-5%", animationDelay: "0.6s" }}
+              className="absolute animate-float bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-4 border border-gray-100 z-0"
+              style={{ top: "40%", left: "0%", animationDelay: "0.6s" }}
             >
               <div className="space-y-3">
                 {/* Item 1 */}
                 <div className="flex items-center gap-3">
-                  <span className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0 shadow-md">
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="white">
+                  <span className="w-7 h-7 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0 shadow-md">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="white">
                       <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
                     </svg>
                   </span>
-                  <div className="flex flex-col gap-1.5">
-                    <div className="w-20 h-2.5 bg-gray-800 rounded-full"></div>
-                    <div className="w-14 h-2 bg-gray-300 rounded-full"></div>
+                  <div className="flex flex-col gap-1">
+                    <div className="w-16 h-2 bg-gray-700 rounded-full"></div>
+                    <div className="w-10 h-1.5 bg-gray-300 rounded-full"></div>
                   </div>
                 </div>
                 {/* Item 2 */}
                 <div className="flex items-center gap-3">
-                  <span className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0 shadow-md">
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="white">
-                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                  <span className="w-7 h-7 rounded-full bg-orange-400 flex items-center justify-center flex-shrink-0 shadow-md">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="white">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                     </svg>
                   </span>
-                  <div className="flex flex-col gap-1.5">
-                    <div className="w-16 h-2.5 bg-gray-800 rounded-full"></div>
-                    <div className="w-12 h-2 bg-gray-300 rounded-full"></div>
+                  <div className="flex flex-col gap-1">
+                    <div className="w-14 h-2 bg-gray-700 rounded-full"></div>
+                    <div className="w-8 h-1.5 bg-gray-300 rounded-full"></div>
                   </div>
                 </div>
                 {/* Item 3 */}
                 <div className="flex items-center gap-3">
-                  <span className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0 shadow-md">
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="white">
+                  <span className="w-7 h-7 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0 shadow-md">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="white">
                       <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
                     </svg>
                   </span>
-                  <div className="flex flex-col gap-1.5">
-                    <div className="w-24 h-2.5 bg-gray-800 rounded-full"></div>
-                    <div className="w-16 h-2 bg-gray-300 rounded-full"></div>
+                  <div className="flex flex-col gap-1">
+                    <div className="w-20 h-2 bg-gray-700 rounded-full"></div>
+                    <div className="w-12 h-1.5 bg-gray-300 rounded-full"></div>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Code brackets icon */}
+            {/* Code brackets icon - IN FRONT, lower position */}
             <div
-              className="absolute animate-float bg-blue-500 p-4 rounded-2xl shadow-xl"
-              style={{ top: "42%", right: "5%", animationDelay: "0.3s" }}
+              className="absolute animate-float bg-blue-500 p-3 rounded-xl shadow-xl z-20"
+              style={{ top: "55%", left: "25%", animationDelay: "0.3s" }}
             >
-              <svg viewBox="0 0 24 24" width="28" height="28" fill="white">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="white">
                 <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
               </svg>
             </div>
 
-            {/* Gear/Settings icon */}
+            {/* Gear/Settings icon - BEHIND character */}
             <div
-              className="absolute animate-float"
-              style={{ top: "12%", right: "0%", animationDelay: "1s" }}
+              className="absolute animate-float z-0"
+              style={{ top: "8%", right: "10%", animationDelay: "1s" }}
             >
-              <svg viewBox="0 0 24 24" width="48" height="48" fill="#3b82f6" className="drop-shadow-lg">
+              <svg viewBox="0 0 24 24" width="50" height="50" fill="#3b82f6" className="drop-shadow-lg">
                 <path d="M19.14 12.94c.04-.31.06-.63.06-.94 0-.31-.02-.63-.06-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
               </svg>
             </div>
 
-            {/* 3D Character Image */}
-            <div className="absolute inset-0 flex items-center justify-center">
+            {/* Small gear icon */}
+            <div
+              className="absolute animate-float z-0"
+              style={{ top: "25%", right: "5%", animationDelay: "0.5s" }}
+            >
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="#60a5fa" className="drop-shadow">
+                <path d="M19.14 12.94c.04-.31.06-.63.06-.94 0-.31-.02-.63-.06-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+              </svg>
+            </div>
+
+            {/* 3D Character Image - IN FRONT */}
+            <div className="absolute inset-0 flex items-center justify-center z-10">
               <Image
                 src="/PHOTO/skill.png"
                 alt="3D Developer Character with Tablet"
-                width={380}
-                height={380}
+                width={400}
+                height={400}
                 className="object-contain drop-shadow-2xl"
               />
             </div>
