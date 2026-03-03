@@ -621,7 +621,7 @@ function ProjectsSection() {
                 } ${index === 2 ? "md:col-start-6" : ""}`}
               >
                 {/* Thumbnail Preview */}
-                <div className={`w-full h-24 md:h-28 rounded-2xl overflow-hidden mb-4 ${isLight ? "bg-gray-100" : "bg-white/10"}`}>
+                <div className={`w-full h-36 md:h-44 rounded-2xl overflow-hidden mb-4 ${isLight ? "bg-gray-100" : "bg-white/10"}`}>
                   <Image
                     src={project.thumbnail}
                     alt={project.title}
