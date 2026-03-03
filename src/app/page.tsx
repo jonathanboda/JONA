@@ -635,57 +635,70 @@ function AboutSection() {
 
           {/* Right - 3D Character with floating UI elements */}
           <div className={`relative h-[450px] lg:h-[500px] ${isVisible ? "animate-slide-in-right" : "opacity-0"}`}>
-            {/* Floating chat bubble - top left */}
+            {/* Years Experience - top left */}
             <div
               className="floating-element animate-float"
-              style={{ top: "10%", left: "5%", animationDelay: "0s" }}
+              style={{ top: "10%", left: "0%", animationDelay: "0s" }}
             >
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="white">
-                    <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
-                  </svg>
-                </div>
-                <div className="flex flex-col gap-1">
-                  <div className="w-16 h-2 bg-gray-300 rounded"></div>
-                  <div className="w-10 h-2 bg-gray-200 rounded"></div>
-                </div>
+              <div className="text-center">
+                <div className="text-2xl font-display font-bold text-blue-600">1+</div>
+                <div className="text-xs text-gray-500">Year Exp</div>
               </div>
             </div>
 
-            {/* Scenario badge - top right */}
+            {/* Projects - top right */}
             <div
               className="floating-element animate-float"
-              style={{ top: "15%", right: "0%", animationDelay: "0.5s" }}
+              style={{ top: "5%", right: "5%", animationDelay: "0.5s" }}
             >
-              <div className="flex items-center gap-2 bg-gray-900 text-white px-3 py-2 rounded-full text-xs">
-                <span className="w-2 h-2 bg-green-400 rounded-full"></span>
-                Scenario 0.1 ...
+              <div className="text-center">
+                <div className="text-2xl font-display font-bold text-purple-600">7+</div>
+                <div className="text-xs text-gray-500">Projects</div>
               </div>
             </div>
 
-            {/* Message bubble - middle left */}
+            {/* Clients - middle left */}
             <div
               className="floating-element animate-float"
               style={{ top: "45%", left: "0%", animationDelay: "1s" }}
             >
-              <div className="flex items-center gap-2">
-                <div className="w-6 h-6 rounded bg-yellow-400"></div>
-                <div className="flex flex-col gap-1">
-                  <div className="w-12 h-2 bg-gray-300 rounded"></div>
-                  <div className="w-8 h-2 bg-gray-200 rounded"></div>
-                </div>
+              <div className="text-center">
+                <div className="text-2xl font-display font-bold text-pink-600">5+</div>
+                <div className="text-xs text-gray-500">Clients</div>
               </div>
             </div>
 
-            {/* Username badge - bottom right */}
+            {/* Code badge - middle right */}
+            <div
+              className="floating-element animate-float"
+              style={{ top: "40%", right: "0%", animationDelay: "0.8s" }}
+            >
+              <div className="flex items-center gap-2 bg-gray-900 text-white px-3 py-2 rounded-full text-xs">
+                <span className="w-2 h-2 bg-green-400 rounded-full"></span>
+                Available
+              </div>
+            </div>
+
+            {/* Tech stack - bottom left */}
+            <div
+              className="floating-element animate-float"
+              style={{ bottom: "15%", left: "5%", animationDelay: "1.2s" }}
+            >
+              <div className="flex items-center gap-2">
+                <div className="w-6 h-6 rounded bg-blue-500"></div>
+                <div className="w-6 h-6 rounded bg-gray-900"></div>
+                <div className="w-6 h-6 rounded bg-cyan-500"></div>
+              </div>
+            </div>
+
+            {/* Satisfaction - bottom right */}
             <div
               className="floating-element animate-float"
               style={{ bottom: "20%", right: "5%", animationDelay: "1.5s" }}
             >
-              <div className="flex items-center gap-2">
-                <div className="w-6 h-6 rounded-full bg-gradient-to-br from-orange-400 to-red-500"></div>
-                <span className="text-sm font-medium text-gray-700">Username</span>
+              <div className="text-center">
+                <div className="text-2xl font-display font-bold text-green-600">100%</div>
+                <div className="text-xs text-gray-500">Satisfaction</div>
               </div>
             </div>
 
