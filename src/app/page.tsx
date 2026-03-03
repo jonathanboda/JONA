@@ -589,49 +589,69 @@ function ServicesSection() {
 function ProjectsSection() {
   const { ref, isVisible } = useIntersectionObserver();
 
+  const cardStyles = [
+    "bg-blue-500 text-white",
+    "bg-white text-gray-900 shadow-sm",
+    "bg-gray-900 text-white",
+    "bg-white text-gray-900 shadow-sm",
+  ];
+
   return (
-    <section id="projects" className="py-20 bg-white">
+    <section id="projects" className="py-20 bg-[#f5f5f5]">
       <div ref={ref} className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className={`text-center mb-16 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
           <p className="section-title">Portfolio</p>
           <h2 className="section-heading">Featured Projects</h2>
         </div>
 
-        <div className={`grid md:grid-cols-2 gap-8 ${isVisible ? "animate-fade-in-up delay-200" : "opacity-0"}`}>
-          {projects.map((project) => (
-            <a
-              key={project.id}
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group card overflow-hidden"
-            >
-              <div className="aspect-[16/10] relative overflow-hidden">
-                <Image
-                  src={project.thumbnail}
-                  alt={project.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="font-display text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+        <div className={`grid grid-cols-12 gap-4 ${isVisible ? "animate-fade-in-up delay-200" : "opacity-0"}`}>
+          {projects.map((project, index) => {
+            const isLarge = index === 1 || index === 2;
+            const cardStyle = cardStyles[index % cardStyles.length];
+            const isLight = cardStyle.includes("bg-white");
+
+            return (
+              <a
+                key={project.id}
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`group rounded-3xl p-5 flex flex-col justify-between transition-transform hover:scale-[1.02] ${cardStyle} ${
+                  isLarge ? "col-span-12 md:col-span-7 min-h-[280px]" : "col-span-6 md:col-span-5 min-h-[240px]"
+                } ${index === 2 ? "md:col-start-6" : ""}`}
+              >
+                {/* Thumbnail Preview */}
+                <div className={`w-full h-24 md:h-28 rounded-2xl overflow-hidden mb-4 ${isLight ? "bg-gray-100" : "bg-white/10"}`}>
+                  <Image
+                    src={project.thumbnail}
+                    alt={project.title}
+                    width={400}
+                    height={200}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div>
+                  {/* Tech label */}
+                  <span className={`text-xs uppercase tracking-wide ${isLight ? "text-gray-400" : "text-white/60"}`}>
+                    {project.technologies[0]}
+                  </span>
+
+                  {/* Title */}
+                  <h3 className="font-display text-xl md:text-2xl font-bold mt-1 mb-3">
                     {project.title}
                   </h3>
-                  <ExternalLinkIcon />
+
+                  {/* Read more link */}
+                  <span className={`text-sm cursor-pointer hover:underline ${
+                    isLight ? "text-blue-600" : cardStyle.includes("blue") ? "text-white" : "text-blue-400"
+                  }`}>
+                    View project
+                  </span>
                 </div>
-                <p className="text-gray-600 text-sm mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech) => (
-                    <span key={tech} className="px-3 py-1 text-xs font-medium bg-gray-100 text-gray-700 rounded-full">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </a>
-          ))}
+              </a>
+            );
+          })}
         </div>
       </div>
     </section>
