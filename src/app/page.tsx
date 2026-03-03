@@ -414,115 +414,105 @@ function HeroSection() {
 
           {/* Right - 3D Character Working on Laptop */}
           <div className="relative h-[500px] lg:h-[600px] animate-fade-in-up delay-200">
-            {/* Laptop screen glow - light source from laptop */}
+            {/* Code editor - BEHIND character */}
             <div
-              className="absolute"
-              style={{
-                bottom: "22%",
-                left: "50%",
-                transform: "translateX(-50%)",
-                width: "180px",
-                height: "100px",
-                background: "radial-gradient(ellipse at center, rgba(59, 130, 246, 0.4) 0%, rgba(59, 130, 246, 0.2) 40%, transparent 70%)",
-                filter: "blur(20px)",
-                animation: "screen-glow 3s ease-in-out infinite",
-                zIndex: 5,
-              }}
-            />
-
-            {/* Light rays from screen to face */}
-            <div
-              className="absolute"
-              style={{
-                bottom: "30%",
-                left: "50%",
-                transform: "translateX(-50%)",
-                width: "120px",
-                height: "200px",
-                background: "linear-gradient(to top, rgba(59, 130, 246, 0.3) 0%, rgba(147, 197, 253, 0.1) 50%, transparent 100%)",
-                clipPath: "polygon(20% 100%, 80% 100%, 60% 0%, 40% 0%)",
-                filter: "blur(8px)",
-                animation: "pulse-soft 2s ease-in-out infinite",
-                zIndex: 4,
-              }}
-            />
-
-            {/* Face illumination from screen */}
-            <div
-              className="face-reflection"
-              style={{
-                top: "30%",
-                left: "50%",
-                transform: "translateX(-50%)",
-                width: "150px",
-                height: "100px",
-              }}
-            />
-
-            {/* Working status indicator */}
-            <div
-              className="working-indicator animate-float"
-              style={{
-                top: "15%",
-                right: "5%",
-                animationDelay: "0.5s",
-              }}
+              className="absolute animate-float bg-[#1a1a2e] text-white px-4 py-3 rounded-2xl shadow-2xl border border-gray-700/50 z-0"
+              style={{ top: "5%", left: "0%", animationDelay: "0s" }}
             >
-              <span className="working-dot"></span>
-              <span className="text-gray-700">coding...</span>
-            </div>
-
-            {/* Floating code snippet */}
-            <div className="floating-element top-10 left-0 animate-float" style={{ animationDelay: "0s" }}>
-              <span className="floating-code">&lt;div&gt;</span>
-            </div>
-
-            {/* Terminal output */}
-            <div
-              className="floating-element top-1/4 right-0 animate-float"
-              style={{ animationDelay: "0.8s" }}
-            >
-              <div className="flex items-center gap-2 text-xs">
-                <span className="w-2 h-2 rounded-full bg-green-500"></span>
-                <span className="font-mono text-gray-600">npm run dev</span>
+              <div className="flex items-center gap-1.5 mb-3">
+                <span className="w-3 h-3 rounded-full bg-[#ff5f56]"></span>
+                <span className="w-3 h-3 rounded-full bg-[#ffbd2e]"></span>
+                <span className="w-3 h-3 rounded-full bg-[#27ca40]"></span>
+              </div>
+              <div className="font-mono text-[11px] leading-relaxed">
+                <div><span className="text-purple-400">const</span> <span className="text-blue-300">developer</span> <span className="text-white">=</span> <span className="text-amber-300">&quot;Jonathan&quot;</span></div>
+                <div><span className="text-purple-400">function</span> <span className="text-yellow-300">build</span><span className="text-white">() {`{`}</span></div>
+                <div className="text-gray-400">&nbsp;&nbsp;// Creating magic<span className="animate-pulse">|</span></div>
               </div>
             </div>
 
-            {/* React icon floating */}
+            {/* Terminal card - BEHIND character */}
             <div
-              className="floating-element bottom-1/3 left-5 animate-float"
-              style={{ animationDelay: "1.2s" }}
+              className="absolute animate-float bg-gray-900 text-white px-4 py-3 rounded-2xl shadow-2xl z-0"
+              style={{ top: "8%", right: "0%", animationDelay: "0.5s" }}
             >
-              <svg viewBox="0 0 24 24" width="24" height="24" className="text-blue-500">
-                <circle cx="12" cy="12" r="2" fill="currentColor"/>
-                <ellipse cx="12" cy="12" rx="10" ry="4" stroke="currentColor" strokeWidth="1" fill="none" className="animate-spin" style={{ animationDuration: "10s" }}/>
-                <ellipse cx="12" cy="12" rx="10" ry="4" stroke="currentColor" strokeWidth="1" fill="none" transform="rotate(60 12 12)" className="animate-spin" style={{ animationDuration: "10s" }}/>
-                <ellipse cx="12" cy="12" rx="10" ry="4" stroke="currentColor" strokeWidth="1" fill="none" transform="rotate(120 12 12)" className="animate-spin" style={{ animationDuration: "10s" }}/>
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-green-400 text-xs">$</span>
+                <span className="text-xs font-mono text-gray-300">npm run dev</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                <span className="text-xs text-green-400">Ready on localhost:3000</span>
+              </div>
+            </div>
+
+            {/* Profile card - BEHIND character */}
+            <div
+              className="absolute animate-float bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-4 border border-gray-100 z-0"
+              style={{ top: "35%", left: "-5%", animationDelay: "0.8s" }}
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm">
+                  J
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-900 text-sm">Jonathan Naik</div>
+                  <div className="text-xs text-gray-500">Web Developer</div>
+                </div>
+              </div>
+            </div>
+
+            {/* React logo - IN FRONT */}
+            <div
+              className="absolute animate-float bg-[#20232a] p-3 rounded-xl shadow-xl z-20"
+              style={{ top: "60%", left: "5%", animationDelay: "1s" }}
+            >
+              <svg viewBox="0 0 24 24" width="28" height="28" className="text-[#61DAFB]">
+                <circle cx="12" cy="12" r="2.5" fill="currentColor"/>
+                <ellipse cx="12" cy="12" rx="10" ry="4" stroke="currentColor" strokeWidth="1" fill="none"/>
+                <ellipse cx="12" cy="12" rx="10" ry="4" stroke="currentColor" strokeWidth="1" fill="none" transform="rotate(60 12 12)"/>
+                <ellipse cx="12" cy="12" rx="10" ry="4" stroke="currentColor" strokeWidth="1" fill="none" transform="rotate(120 12 12)"/>
               </svg>
             </div>
 
-            {/* Git commit indicator */}
+            {/* Status badge - BEHIND character */}
             <div
-              className="floating-element bottom-20 right-5 animate-float"
-              style={{ animationDelay: "1.5s" }}
+              className="absolute animate-float bg-white rounded-full shadow-lg px-4 py-2 z-0"
+              style={{ top: "45%", right: "0%", animationDelay: "1.2s" }}
             >
-              <div className="flex items-center gap-2 text-xs">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2">
-                  <circle cx="12" cy="12" r="3"/>
-                  <line x1="12" y1="3" x2="12" y2="9"/>
-                  <line x1="12" y1="15" x2="12" y2="21"/>
-                </svg>
-                <span className="text-gray-600">committed</span>
+              <div className="flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse"></span>
+                <span className="text-sm font-medium text-gray-700">Available</span>
               </div>
             </div>
 
-            {/* 3D Character */}
-            <div className="absolute inset-0 flex items-center justify-center">
+            {/* Code brackets icon - IN FRONT */}
+            <div
+              className="absolute animate-float bg-blue-500 p-3 rounded-xl shadow-xl z-20"
+              style={{ bottom: "25%", right: "10%", animationDelay: "0.3s" }}
+            >
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="white">
+                <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+              </svg>
+            </div>
+
+            {/* Gear icon - BEHIND */}
+            <div
+              className="absolute animate-float z-0"
+              style={{ bottom: "35%", right: "0%", animationDelay: "1.5s" }}
+            >
+              <svg viewBox="0 0 24 24" width="36" height="36" fill="#3b82f6" className="drop-shadow-lg">
+                <path d="M19.14 12.94c.04-.31.06-.63.06-.94 0-.31-.02-.63-.06-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+              </svg>
+            </div>
+
+            {/* 3D Character - IN FRONT */}
+            <div className="absolute inset-0 flex items-center justify-center z-10">
               <Image
                 src="/PHOTO/hero.png"
                 alt="3D Developer Character Working"
-                width={450}
-                height={450}
+                width={480}
+                height={480}
                 className="object-contain drop-shadow-2xl"
                 priority
               />
