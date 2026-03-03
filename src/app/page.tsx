@@ -396,15 +396,48 @@ function HeroSection() {
 
           {/* Right - 3D Character Working on Laptop */}
           <div className="relative h-[500px] lg:h-[600px] animate-fade-in-up delay-200">
-            {/* Screen glow reflection on face - positioned above character */}
+            {/* Laptop screen glow - light source from laptop */}
+            <div
+              className="absolute"
+              style={{
+                bottom: "22%",
+                left: "50%",
+                transform: "translateX(-50%)",
+                width: "180px",
+                height: "100px",
+                background: "radial-gradient(ellipse at center, rgba(59, 130, 246, 0.4) 0%, rgba(59, 130, 246, 0.2) 40%, transparent 70%)",
+                filter: "blur(20px)",
+                animation: "screen-glow 3s ease-in-out infinite",
+                zIndex: 5,
+              }}
+            />
+
+            {/* Light rays from screen to face */}
+            <div
+              className="absolute"
+              style={{
+                bottom: "30%",
+                left: "50%",
+                transform: "translateX(-50%)",
+                width: "120px",
+                height: "200px",
+                background: "linear-gradient(to top, rgba(59, 130, 246, 0.3) 0%, rgba(147, 197, 253, 0.1) 50%, transparent 100%)",
+                clipPath: "polygon(20% 100%, 80% 100%, 60% 0%, 40% 0%)",
+                filter: "blur(8px)",
+                animation: "pulse-soft 2s ease-in-out infinite",
+                zIndex: 4,
+              }}
+            />
+
+            {/* Face illumination from screen */}
             <div
               className="face-reflection"
               style={{
-                top: "25%",
+                top: "30%",
                 left: "50%",
                 transform: "translateX(-50%)",
-                width: "200px",
-                height: "120px",
+                width: "150px",
+                height: "100px",
               }}
             />
 
