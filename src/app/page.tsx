@@ -625,89 +625,82 @@ function SkillsSection() {
           <div className={`relative h-[400px] lg:h-[450px] ${isVisible ? "animate-slide-in-right" : "opacity-0"}`}>
             {/* Code editor floating element */}
             <div
-              className="floating-element animate-float !bg-gray-900 text-white px-4 py-3 !rounded-xl"
-              style={{ top: "5%", left: "15%", animationDelay: "0s" }}
+              className="absolute animate-float bg-[#1a1a2e] text-white px-4 py-3 rounded-2xl shadow-2xl border border-gray-700/50"
+              style={{ top: "2%", left: "10%", animationDelay: "0s" }}
             >
-              <div className="flex items-center gap-2 mb-2">
-                <span className="w-2 h-2 rounded-full bg-red-500"></span>
-                <span className="w-2 h-2 rounded-full bg-yellow-500"></span>
-                <span className="w-2 h-2 rounded-full bg-green-500"></span>
+              <div className="flex items-center gap-1.5 mb-3">
+                <span className="w-3 h-3 rounded-full bg-[#ff5f56]"></span>
+                <span className="w-3 h-3 rounded-full bg-[#ffbd2e]"></span>
+                <span className="w-3 h-3 rounded-full bg-[#27ca40]"></span>
               </div>
-              <code className="text-xs text-green-400">&lt;div class=&quot;...&quot;&gt;</code>
-              <br />
-              <code className="text-xs text-green-400">&lt;/div&gt;<span className="animate-pulse">|</span></code>
+              <div className="font-mono text-[11px] leading-relaxed">
+                <div><span className="text-pink-400">&lt;div</span> <span className="text-green-400">class</span>=<span className="text-amber-300">&quot;...&quot;</span><span className="text-pink-400">&gt;</span></div>
+                <div className="text-gray-400">&nbsp;&nbsp;...</div>
+                <div><span className="text-pink-400">&lt;/div&gt;</span><span className="text-white animate-pulse">|</span></div>
+              </div>
             </div>
 
-            {/* Checklist item 1 */}
+            {/* Checklist card with multiple items */}
             <div
-              className="floating-element animate-float"
-              style={{ top: "38%", left: "0%", animationDelay: "0.5s" }}
+              className="absolute animate-float bg-white rounded-2xl shadow-xl p-4 border border-gray-100"
+              style={{ top: "35%", left: "-5%", animationDelay: "0.6s" }}
             >
-              <div className="flex items-center gap-3">
-                <span className="w-7 h-7 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="white">
-                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
-                  </svg>
-                </span>
-                <div className="flex flex-col gap-1">
-                  <div className="w-16 h-2 bg-gray-300 rounded"></div>
-                  <div className="w-10 h-2 bg-gray-200 rounded"></div>
+              <div className="space-y-3">
+                {/* Item 1 */}
+                <div className="flex items-center gap-3">
+                  <span className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0 shadow-md">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="white">
+                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                    </svg>
+                  </span>
+                  <div className="flex flex-col gap-1.5">
+                    <div className="w-20 h-2.5 bg-gray-800 rounded-full"></div>
+                    <div className="w-14 h-2 bg-gray-300 rounded-full"></div>
+                  </div>
                 </div>
-              </div>
-            </div>
-
-            {/* Checklist item 2 */}
-            <div
-              className="floating-element animate-float"
-              style={{ top: "53%", left: "5%", animationDelay: "0.8s" }}
-            >
-              <div className="flex items-center gap-3">
-                <span className="w-7 h-7 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="white">
-                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
-                  </svg>
-                </span>
-                <div className="flex flex-col gap-1">
-                  <div className="w-14 h-2 bg-gray-300 rounded"></div>
-                  <div className="w-8 h-2 bg-gray-200 rounded"></div>
+                {/* Item 2 */}
+                <div className="flex items-center gap-3">
+                  <span className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0 shadow-md">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="white">
+                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                    </svg>
+                  </span>
+                  <div className="flex flex-col gap-1.5">
+                    <div className="w-16 h-2.5 bg-gray-800 rounded-full"></div>
+                    <div className="w-12 h-2 bg-gray-300 rounded-full"></div>
+                  </div>
                 </div>
-              </div>
-            </div>
-
-            {/* Checklist item 3 */}
-            <div
-              className="floating-element animate-float"
-              style={{ top: "68%", left: "0%", animationDelay: "1.1s" }}
-            >
-              <div className="flex items-center gap-3">
-                <span className="w-7 h-7 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="white">
-                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
-                  </svg>
-                </span>
-                <div className="flex flex-col gap-1">
-                  <div className="w-12 h-2 bg-gray-300 rounded"></div>
-                  <div className="w-16 h-2 bg-gray-200 rounded"></div>
+                {/* Item 3 */}
+                <div className="flex items-center gap-3">
+                  <span className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0 shadow-md">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="white">
+                      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                    </svg>
+                  </span>
+                  <div className="flex flex-col gap-1.5">
+                    <div className="w-24 h-2.5 bg-gray-800 rounded-full"></div>
+                    <div className="w-16 h-2 bg-gray-300 rounded-full"></div>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Code brackets icon */}
             <div
-              className="floating-element animate-float !bg-blue-500 !p-3 !rounded-xl"
-              style={{ top: "45%", right: "5%", animationDelay: "0.3s" }}
+              className="absolute animate-float bg-blue-500 p-4 rounded-2xl shadow-xl"
+              style={{ top: "42%", right: "5%", animationDelay: "0.3s" }}
             >
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="white">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="white">
                 <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
               </svg>
             </div>
 
             {/* Gear/Settings icon */}
             <div
-              className="floating-element animate-float !bg-transparent !shadow-none !p-0"
-              style={{ top: "15%", right: "0%", animationDelay: "1s" }}
+              className="absolute animate-float"
+              style={{ top: "12%", right: "0%", animationDelay: "1s" }}
             >
-              <svg viewBox="0 0 24 24" width="40" height="40" fill="#3b82f6">
+              <svg viewBox="0 0 24 24" width="48" height="48" fill="#3b82f6" className="drop-shadow-lg">
                 <path d="M19.14 12.94c.04-.31.06-.63.06-.94 0-.31-.02-.63-.06-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
               </svg>
             </div>
@@ -719,7 +712,7 @@ function SkillsSection() {
                 alt="3D Developer Character"
                 width={350}
                 height={350}
-                className="object-contain drop-shadow-xl"
+                className="object-contain drop-shadow-2xl"
               />
             </div>
           </div>
