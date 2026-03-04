@@ -499,8 +499,8 @@ function NavBar({ onStartNow }: { onStartNow: () => void }) {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="flex flex-col items-center leading-none">
-            <span className="font-display text-xl font-extrabold tracking-tight bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 bg-clip-text text-transparent">AD ON AI</span>
-            <span className="font-display text-[10px] font-semibold tracking-[0.25em] text-gray-500 mt-0.5">— INFOTECH —</span>
+            <span className="font-display text-2xl font-extrabold tracking-tight bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 bg-clip-text text-transparent">AD ON AI</span>
+            <span className="font-display text-[11px] font-bold tracking-[0.25em] text-gray-800 mt-0.5">— INFOTECH —</span>
           </button>
 
           {/* Desktop Navigation */}
