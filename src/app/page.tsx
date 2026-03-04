@@ -414,60 +414,102 @@ function HeroSection() {
 
           {/* Right - 3D Character Working on Laptop */}
           <div className="relative h-[500px] lg:h-[600px] animate-fade-in-up delay-200">
-            {/* Code editor - BEHIND character */}
+            {/* VS Code editor - BEHIND character */}
             <div
-              className="absolute animate-float bg-[#1a1a2e] text-white px-4 py-3 rounded-2xl shadow-2xl border border-gray-700/50 z-0"
-              style={{ top: "5%", left: "0%", animationDelay: "0s" }}
+              className="absolute animate-float bg-[#1e1e1e] text-white rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] border border-[#333] z-0 overflow-hidden"
+              style={{ top: "3%", left: "-2%", animationDelay: "0s", width: "200px" }}
             >
-              <div className="flex items-center gap-1.5 mb-3">
-                <span className="w-3 h-3 rounded-full bg-[#ff5f56]"></span>
-                <span className="w-3 h-3 rounded-full bg-[#ffbd2e]"></span>
-                <span className="w-3 h-3 rounded-full bg-[#27ca40]"></span>
+              {/* Title bar */}
+              <div className="flex items-center justify-between px-3 py-1.5 bg-[#323233] border-b border-[#252526]">
+                <div className="flex items-center gap-1.5">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]"></span>
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]"></span>
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#27ca40]"></span>
+                </div>
+                <span className="text-[10px] text-gray-400 font-medium">index.ts</span>
+                <div className="w-12"></div>
               </div>
-              <div className="font-mono text-[11px] leading-relaxed">
-                <div><span className="text-purple-400">const</span> <span className="text-blue-300">developer</span> <span className="text-white">=</span> <span className="text-amber-300">&quot;Jonathan&quot;</span></div>
-                <div><span className="text-purple-400">function</span> <span className="text-yellow-300">build</span><span className="text-white">() {`{`}</span></div>
-                <div className="text-gray-400">&nbsp;&nbsp;// Creating magic<span className="animate-pulse">|</span></div>
+              {/* Tab bar */}
+              <div className="flex bg-[#252526] border-b border-[#1e1e1e]">
+                <div className="flex items-center gap-1.5 px-3 py-1 bg-[#1e1e1e] border-r border-[#252526] text-[10px] text-gray-300">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="#3178c6"><path d="M0 12v12h24V0H0v12zm19.34-.956c.61.152 1.074.423 1.501.865.221.236.549.666.575.77.008.03-1.036.73-1.668 1.123-.023.015-.115-.084-.217-.236-.31-.47-.632-.68-1.22-.637-.84.06-1.381.543-1.346 1.2.015.18.06.289.174.432.158.186.393.318 1.178.66 1.45.63 2.07 1.043 2.47 1.65.44.67.54 1.74.246 2.56-.34.93-1.175 1.56-2.377 1.8-.37.074-1.26.064-1.66-.02-.872-.19-1.7-.68-2.218-1.32-.2-.246-.598-.888-.564-.944l.633-.378.79-.468.197.295c.287.426.616.705 1.076.875.32.095 1.09.08 1.36-.023.315-.12.494-.34.559-.645.06-.295-.007-.504-.217-.695-.147-.134-.607-.345-1.334-.612-1.07-.393-1.53-.629-1.97-1.01-.272-.233-.53-.58-.662-.876-.12-.286-.15-.49-.15-1.006 0-.478.023-.63.137-.928.33-.874 1.152-1.475 2.25-1.655.377-.06 1.251-.024 1.63.07z"/><path d="M14.256 14.393l.008 1.367H10.67v7.783H8.326v-7.783H4.73v-1.318c0-.735.015-1.338.034-1.367.015-.03 2.16-.045 4.76-.04l4.725.012.007 1.346z"/></svg>
+                  <span>index.ts</span>
+                </div>
+              </div>
+              {/* Code content with line numbers */}
+              <div className="px-2 py-2 font-mono text-[10px] leading-[1.6]">
+                <div className="flex">
+                  <span className="text-gray-600 w-6 text-right mr-3 select-none">1</span>
+                  <div><span className="text-[#c586c0]">const</span> <span className="text-[#9cdcfe]">dev</span> <span className="text-white">=</span> <span className="text-[#ce9178]">&quot;Jonathan&quot;</span></div>
+                </div>
+                <div className="flex">
+                  <span className="text-gray-600 w-6 text-right mr-3 select-none">2</span>
+                  <div><span className="text-[#c586c0]">async</span> <span className="text-[#569cd6]">function</span> <span className="text-[#dcdcaa]">build</span><span className="text-white">() {`{`}</span></div>
+                </div>
+                <div className="flex">
+                  <span className="text-gray-600 w-6 text-right mr-3 select-none">3</span>
+                  <div className="text-[#6a9955]">&nbsp;&nbsp;// Creating magic<span className="animate-pulse text-white">|</span></div>
+                </div>
+                <div className="flex">
+                  <span className="text-gray-600 w-6 text-right mr-3 select-none">4</span>
+                  <div><span className="text-white">{`}`}</span></div>
+                </div>
               </div>
             </div>
 
             {/* Terminal card - BEHIND character */}
             <div
-              className="absolute animate-float bg-gray-900 text-white px-4 py-3 rounded-2xl shadow-2xl z-0"
-              style={{ top: "8%", right: "0%", animationDelay: "0.5s" }}
+              className="absolute animate-float bg-[#0d1117] text-white rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.35)] border border-[#30363d] z-0 overflow-hidden"
+              style={{ top: "6%", right: "-2%", animationDelay: "0.5s", width: "190px" }}
             >
-              <div className="flex items-center gap-2 mb-2">
-                <span className="text-green-400 text-xs">$</span>
-                <span className="text-xs font-mono text-gray-300">npm run dev</span>
+              {/* Terminal title bar */}
+              <div className="flex items-center gap-2 px-3 py-1.5 bg-[#161b22] border-b border-[#30363d]">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8b949e" strokeWidth="2" strokeLinecap="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+                <span className="text-[10px] text-gray-400 font-medium">Terminal</span>
               </div>
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                <span className="text-xs text-green-400">Ready on localhost:3000</span>
+              <div className="px-3 py-2.5 font-mono text-[10px] space-y-1.5">
+                <div className="flex items-center gap-1.5">
+                  <span className="text-green-400">&#10148;</span>
+                  <span className="text-gray-300">npm run dev</span>
+                </div>
+                <div className="text-gray-500 text-[9px]">compiled successfully</div>
+                <div className="flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                  <span className="text-green-400">ready on localhost:3000</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <span className="text-green-400">&#10148;</span>
+                  <span className="text-gray-500 animate-pulse">_</span>
+                </div>
               </div>
             </div>
 
             {/* Profile card - BEHIND character */}
             <div
-              className="absolute animate-float bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-4 border border-gray-100 z-0"
+              className="absolute animate-float bg-white rounded-2xl shadow-[0_4px_24px_rgba(0,0,0,0.08)] p-3.5 border border-gray-200/80 z-0"
               style={{ top: "35%", left: "-5%", animationDelay: "0.8s" }}
             >
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm">
+                <div className="w-11 h-11 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm ring-2 ring-white shadow-md">
                   J
                 </div>
                 <div>
                   <div className="font-semibold text-gray-900 text-sm">Jonathan Naik</div>
-                  <div className="text-xs text-gray-500">Web Developer</div>
+                  <div className="text-[11px] text-gray-500">Full Stack Developer</div>
+                  <div className="flex items-center gap-1 mt-0.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                    <span className="text-[10px] text-green-600 font-medium">Online</span>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* React logo - IN FRONT */}
+            {/* React logo badge - IN FRONT */}
             <div
-              className="absolute animate-float bg-[#20232a] p-3 rounded-xl shadow-xl z-20"
-              style={{ top: "60%", left: "5%", animationDelay: "1s" }}
+              className="absolute animate-float bg-[#20232a] p-3 rounded-2xl shadow-[0_4px_20px_rgba(97,218,251,0.25)] z-20 border border-[#61DAFB]/20"
+              style={{ top: "62%", left: "5%", animationDelay: "1s" }}
             >
-              <svg viewBox="0 0 24 24" width="28" height="28" className="text-[#61DAFB]">
+              <svg viewBox="0 0 24 24" width="26" height="26" className="text-[#61DAFB]">
                 <circle cx="12" cy="12" r="2.5" fill="currentColor"/>
                 <ellipse cx="12" cy="12" rx="10" ry="4" stroke="currentColor" strokeWidth="1" fill="none"/>
                 <ellipse cx="12" cy="12" rx="10" ry="4" stroke="currentColor" strokeWidth="1" fill="none" transform="rotate(60 12 12)"/>
@@ -475,35 +517,54 @@ function HeroSection() {
               </svg>
             </div>
 
-            {/* Status badge - BEHIND character */}
+            {/* Available for work badge - BEHIND character */}
             <div
-              className="absolute animate-float bg-white rounded-full shadow-lg px-4 py-2 z-0"
-              style={{ top: "45%", right: "0%", animationDelay: "1.2s" }}
+              className="absolute animate-float bg-white rounded-full shadow-[0_2px_16px_rgba(0,0,0,0.08)] px-4 py-2 z-0 border border-gray-100"
+              style={{ top: "45%", right: "-2%", animationDelay: "1.2s" }}
             >
               <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse"></span>
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+                </span>
                 <span className="text-sm font-medium text-gray-700">Available</span>
               </div>
             </div>
 
-            {/* Code brackets icon - IN FRONT */}
+            {/* Code brackets badge - IN FRONT */}
             <div
-              className="absolute animate-float bg-blue-500 p-3 rounded-xl shadow-xl z-20"
-              style={{ bottom: "25%", right: "10%", animationDelay: "0.3s" }}
+              className="absolute animate-float bg-gradient-to-br from-blue-500 to-blue-600 p-3 rounded-2xl shadow-[0_4px_20px_rgba(59,130,246,0.35)] z-20"
+              style={{ bottom: "25%", right: "8%", animationDelay: "0.3s" }}
             >
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="white">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="white">
                 <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
               </svg>
             </div>
 
-            {/* Gear icon - BEHIND */}
+            {/* GitHub-style contribution widget - BEHIND */}
             <div
-              className="absolute animate-float z-0"
-              style={{ bottom: "35%", right: "0%", animationDelay: "1.5s" }}
+              className="absolute animate-float bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] px-3 py-2.5 border border-gray-200/80 z-0"
+              style={{ bottom: "30%", right: "-2%", animationDelay: "1.5s" }}
             >
-              <svg viewBox="0 0 24 24" width="36" height="36" fill="#3b82f6" className="drop-shadow-lg">
-                <path d="M19.14 12.94c.04-.31.06-.63.06-.94 0-.31-.02-.63-.06-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
-              </svg>
+              <div className="text-[10px] text-gray-500 font-medium mb-1.5">Contributions</div>
+              <div className="flex gap-[3px]">
+                {[3, 1, 4, 2, 4, 3, 2, 1, 4, 3, 2, 4].map((level, i) => (
+                  <div key={i} className="flex flex-col gap-[3px]">
+                    {[0, 1, 2].map((row) => (
+                      <div
+                        key={row}
+                        className="w-[6px] h-[6px] rounded-[2px]"
+                        style={{
+                          backgroundColor:
+                            (level + row) % 4 === 0 ? "#ebedf0" :
+                            (level + row) % 4 === 1 ? "#9be9a8" :
+                            (level + row) % 4 === 2 ? "#40c463" : "#216e39",
+                        }}
+                      />
+                    ))}
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* 3D Character - IN FRONT */}
@@ -545,7 +606,7 @@ function ServicesSection() {
             <span className="text-xs text-gray-400 uppercase tracking-wide">Frontend</span>
             <div>
               <h3 className="font-display text-xl font-bold mb-3">Business Websites</h3>
-              <span className="text-sm text-blue-400 cursor-pointer hover:underline">Learn more</span>
+              <span className="text-sm text-blue-400 cursor-pointer hover:underline">Start now</span>
             </div>
           </div>
 
@@ -554,7 +615,7 @@ function ServicesSection() {
             <span className="text-xs text-gray-400 uppercase tracking-wide">Fullstack</span>
             <div>
               <h3 className="font-display text-2xl md:text-3xl font-bold mb-3">Web Applications & Custom Solutions</h3>
-              <span className="text-sm text-blue-400 cursor-pointer hover:underline">Learn more</span>
+              <span className="text-sm text-blue-400 cursor-pointer hover:underline">Start now</span>
             </div>
           </div>
 
@@ -563,7 +624,7 @@ function ServicesSection() {
             <span className="text-xs text-gray-400 uppercase tracking-wide">Design</span>
             <div>
               <h3 className="font-display text-xl font-bold text-gray-900 mb-3">Landing Pages</h3>
-              <span className="text-sm text-blue-600 cursor-pointer hover:underline">Learn more</span>
+              <span className="text-sm text-blue-600 cursor-pointer hover:underline">Start now</span>
             </div>
           </div>
 
@@ -572,7 +633,7 @@ function ServicesSection() {
             <span className="text-xs text-gray-400 uppercase tracking-wide">Creative</span>
             <div>
               <h3 className="font-display text-xl font-bold text-gray-900 mb-3">Portfolio Sites</h3>
-              <span className="text-sm text-blue-600 cursor-pointer hover:underline">Learn more</span>
+              <span className="text-sm text-blue-600 cursor-pointer hover:underline">Start now</span>
             </div>
           </div>
 
@@ -581,7 +642,7 @@ function ServicesSection() {
             <span className="text-xs text-gray-700 uppercase tracking-wide">Backend</span>
             <div>
               <h3 className="font-display text-xl font-bold text-gray-900 mb-3">Admin Dashboards & APIs</h3>
-              <span className="text-sm text-gray-700 cursor-pointer hover:underline">Learn more</span>
+              <span className="text-sm text-gray-700 cursor-pointer hover:underline">Start now</span>
             </div>
           </div>
         </div>
