@@ -42,7 +42,7 @@ interface Testimonial {
 // =====================================================
 
 const personalInfo = {
-  name: "AD ON AI Infotech",
+  name: "AD ON AI(AOI) Infotech",
   firstName: "AOI",
   lastName: "Infotech",
   role: "Web Development Solutions",
@@ -141,7 +141,7 @@ const testimonials: Testimonial[] = [
     name: "Sarah Johnson",
     role: "Founder",
     company: "Elvenwood Interior",
-    feedback: "AD ON AI Infotech delivered an exceptional website that perfectly captures our brand. Their attention to detail and technical expertise made the entire process smooth and enjoyable.",
+    feedback: "AD ON AI(AOI) Infotech delivered an exceptional website that perfectly captures our brand. Their attention to detail and technical expertise made the entire process smooth and enjoyable.",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80",
   },
   {
@@ -149,7 +149,7 @@ const testimonials: Testimonial[] = [
     name: "Mr. Gnana",
     role: "Music Director",
     company: "Independent Artist",
-    feedback: "Working with AD ON AI Infotech was a great experience. They understood my vision and created a portfolio that truly represents my work as a music director.",
+    feedback: "Working with AD ON AI(AOI) Infotech was a great experience. They understood my vision and created a portfolio that truly represents my work as a music director.",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
   },
   {
@@ -157,7 +157,7 @@ const testimonials: Testimonial[] = [
     name: "Priya Sharma",
     role: "CEO",
     company: "The Precious Interiors",
-    feedback: "Professional, responsive, and incredibly talented. AD ON AI Infotech transformed our online presence with a stunning website that our clients love.",
+    feedback: "Professional, responsive, and incredibly talented. AD ON AI(AOI) Infotech transformed our online presence with a stunning website that our clients love.",
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80",
   },
 ];
@@ -498,8 +498,8 @@ function NavBar({ onStartNow }: { onStartNow: () => void }) {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="font-display text-xl font-bold text-gray-900">
-            AOI Infotech
+          <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="flex items-center">
+            <Image src="/PHOTO/LOGO.PNG" alt="AD ON AI(AOI) Infotech" width={120} height={40} className="h-10 w-auto object-contain" />
           </button>
 
           {/* Desktop Navigation */}
@@ -665,7 +665,7 @@ function HeroSection() {
                   A
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-900 text-sm">AD ON AI Infotech</div>
+                  <div className="font-semibold text-gray-900 text-sm">AD ON AI(AOI) Infotech</div>
                   <div className="text-[11px] text-gray-500">Web Solutions</div>
                   <div className="flex items-center gap-1 mt-0.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
