@@ -499,7 +499,7 @@ function NavBar({ onStartNow }: { onStartNow: () => void }) {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="flex items-center">
-            <Image src="/PHOTO/LOGO.PNG" alt="AD ON AI(AOI) Infotech" width={120} height={40} className="h-10 w-auto object-contain" />
+            <Image src="/PHOTO/logo.png" alt="AD ON AI(AOI) Infotech" width={120} height={40} className="h-10 w-auto object-contain" />
           </button>
 
           {/* Desktop Navigation */}
