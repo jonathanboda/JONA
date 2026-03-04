@@ -17,22 +17,22 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Jonathan Naik — Web Developer",
+  title: "AD ON AI Infotech — Web Development Solutions",
   description:
-    "Web Developer based in Hyderabad, India. Turning Ideas into Interactive Reality. Specializing in React, Next.js, and modern web technologies.",
+    "AD ON AI (AOI) Infotech based in Hyderabad, India. Turning Ideas into Interactive Reality. Specializing in React, Next.js, and modern web technologies.",
   keywords: [
     "Web Developer",
     "React",
     "Next.js",
     "Hyderabad",
-    "Portfolio",
-    "Boda Jonathan Naik",
-    "Frontend Developer",
-    "Supabase",
+    "AD ON AI Infotech",
+    "AOI Infotech",
+    "Web Development",
+    "Full Stack",
   ],
-  authors: [{ name: "Boda Jonathan Naik" }],
+  authors: [{ name: "AD ON AI Infotech" }],
   openGraph: {
-    title: "Jonathan Naik — Web Developer",
+    title: "AD ON AI Infotech — Web Development Solutions",
     description: "Turning Ideas into Interactive Reality",
     type: "website",
   },

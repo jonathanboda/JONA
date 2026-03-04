@@ -42,18 +42,19 @@ interface Testimonial {
 // =====================================================
 
 const personalInfo = {
-  name: "Boda Jonathan Naik",
-  firstName: "Jonathan",
-  lastName: "Naik",
-  role: "Web Developer",
+  name: "AD ON AI Infotech",
+  firstName: "AOI",
+  lastName: "Infotech",
+  role: "Web Development Solutions",
   location: "Hyderabad, India",
   tagline: "I shape ideas into reality",
   about:
-    "I design purposeful digital experiences across a broad range of products, always working to make technology feel more human.",
-  email: "jonathanboda193@gmail.com",
-  linkedin: "https://linkedin.com/in/boda-jonathan-naik-3b55b5181",
-  github: "https://github.com/jonathanboda",
-  instagram: "https://instagram.com/jona_bfgim",
+    "We design purposeful digital experiences across a broad range of products, always working to make technology feel more human.",
+  email: "ADONAI5417@GMAIL.COM",
+  linkedin: "https://www.linkedin.com/in/ad-on-ai-aoi-infotech-9b39ab3b4/",
+  instagram: "https://www.instagram.com/ad_on_ai_infotech/",
+  x: "https://x.com/ADONAI_INFOTECH",
+  whatsapp: "919391202891",
 };
 
 const projects: Project[] = [
@@ -140,7 +141,7 @@ const testimonials: Testimonial[] = [
     name: "Sarah Johnson",
     role: "Founder",
     company: "Elvenwood Interior",
-    feedback: "Jonathan delivered an exceptional website that perfectly captures our brand. His attention to detail and technical expertise made the entire process smooth and enjoyable.",
+    feedback: "AD ON AI Infotech delivered an exceptional website that perfectly captures our brand. Their attention to detail and technical expertise made the entire process smooth and enjoyable.",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80",
   },
   {
@@ -148,7 +149,7 @@ const testimonials: Testimonial[] = [
     name: "Mr. Gnana",
     role: "Music Director",
     company: "Independent Artist",
-    feedback: "Working with Jonathan was a great experience. He understood my vision and created a portfolio that truly represents my work as a music director.",
+    feedback: "Working with AD ON AI Infotech was a great experience. They understood my vision and created a portfolio that truly represents my work as a music director.",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
   },
   {
@@ -156,7 +157,7 @@ const testimonials: Testimonial[] = [
     name: "Priya Sharma",
     role: "CEO",
     company: "The Precious Interiors",
-    feedback: "Professional, responsive, and incredibly talented. Jonathan transformed our online presence with a stunning website that our clients love.",
+    feedback: "Professional, responsive, and incredibly talented. AD ON AI Infotech transformed our online presence with a stunning website that our clients love.",
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80",
   },
 ];
@@ -292,10 +293,26 @@ function LinkedInIcon() {
   );
 }
 
-function GitHubIcon() {
+function InstagramIcon() {
   return (
     <svg fill="currentColor" viewBox="0 0 24 24" width="20" height="20">
-      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+    </svg>
+  );
+}
+
+function XIcon() {
+  return (
+    <svg fill="currentColor" viewBox="0 0 24 24" width="20" height="20">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  );
+}
+
+function WhatsAppIcon() {
+  return (
+    <svg fill="currentColor" viewBox="0 0 24 24" width="20" height="20">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
     </svg>
   );
 }
@@ -317,10 +334,158 @@ function CloseIcon() {
 }
 
 // =====================================================
+// CTA FORM MODAL
+// =====================================================
+
+function CTAFormModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    service: "",
+    budget: "",
+  });
+  const [errors, setErrors] = useState<Record<string, string>>({});
+
+  if (!isOpen) return null;
+
+  const services = [
+    "Business Websites",
+    "Landing Pages",
+    "Web Applications",
+    "Portfolio Sites",
+    "Admin Dashboards & APIs",
+    "Custom Systems",
+  ];
+
+  const budgets = [
+    "₹10,000 – ₹25,000",
+    "₹25,000 – ₹50,000",
+    "₹50,000 – ₹1,00,000",
+    "₹1,00,000+",
+  ];
+
+  const validate = () => {
+    const newErrors: Record<string, string> = {};
+    if (!formData.name.trim()) newErrors.name = "Name is required";
+    if (!formData.phone.trim() || !/^\d{10,15}$/.test(formData.phone.trim()))
+      newErrors.phone = "Enter a valid phone number";
+    if (!formData.service) newErrors.service = "Select a service";
+    if (!formData.budget) newErrors.budget = "Select a budget range";
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!validate()) return;
+
+    const message = `Hello! I'm interested in your services.\n\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Service:* ${formData.service}\n*Budget:* ${formData.budget}`;
+    const url = `https://wa.me/${personalInfo.whatsapp}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+    onClose();
+    setFormData({ name: "", phone: "", service: "", budget: "" });
+    setErrors({});
+  };
+
+  return (
+    <div className="fixed inset-0 z-[60] flex items-center justify-center p-4" onClick={onClose}>
+      {/* Backdrop */}
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
+
+      {/* Modal */}
+      <div
+        className="relative bg-white rounded-2xl shadow-2xl w-full max-w-md p-8 animate-fade-in-up"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Close button */}
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+        >
+          <CloseIcon />
+        </button>
+
+        <h3 className="font-display text-2xl font-bold text-gray-900 mb-1">Get Started</h3>
+        <p className="text-gray-500 text-sm mb-6">Tell us about your project</p>
+
+        <form onSubmit={handleSubmit} className="space-y-4">
+          {/* Name */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Name *</label>
+            <input
+              type="text"
+              value={formData.name}
+              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              className={`w-full px-4 py-2.5 rounded-xl border ${errors.name ? "border-red-400" : "border-gray-200"} bg-gray-50 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-500 transition-colors`}
+              placeholder="Your name"
+            />
+            {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
+          </div>
+
+          {/* Phone */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Phone *</label>
+            <input
+              type="tel"
+              value={formData.phone}
+              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+              className={`w-full px-4 py-2.5 rounded-xl border ${errors.phone ? "border-red-400" : "border-gray-200"} bg-gray-50 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-500 transition-colors`}
+              placeholder="Your phone number"
+            />
+            {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
+          </div>
+
+          {/* Service */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Service *</label>
+            <select
+              value={formData.service}
+              onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+              className={`w-full px-4 py-2.5 rounded-xl border ${errors.service ? "border-red-400" : "border-gray-200"} bg-gray-50 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-500 transition-colors`}
+            >
+              <option value="">Select a service</option>
+              {services.map((s) => (
+                <option key={s} value={s}>{s}</option>
+              ))}
+            </select>
+            {errors.service && <p className="text-red-500 text-xs mt-1">{errors.service}</p>}
+          </div>
+
+          {/* Budget */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Budget *</label>
+            <select
+              value={formData.budget}
+              onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
+              className={`w-full px-4 py-2.5 rounded-xl border ${errors.budget ? "border-red-400" : "border-gray-200"} bg-gray-50 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-500 transition-colors`}
+            >
+              <option value="">Select budget range</option>
+              {budgets.map((b) => (
+                <option key={b} value={b}>{b}</option>
+              ))}
+            </select>
+            {errors.budget && <p className="text-red-500 text-xs mt-1">{errors.budget}</p>}
+          </div>
+
+          {/* Submit */}
+          <button
+            type="submit"
+            className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+          >
+            <WhatsAppIcon />
+            Send via WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+// =====================================================
 // NAVBAR COMPONENT
 // =====================================================
 
-function NavBar() {
+function NavBar({ onStartNow }: { onStartNow: () => void }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const scrollToSection = (id: string) => {
@@ -334,7 +499,7 @@ function NavBar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="font-display text-xl font-bold text-gray-900">
-            {personalInfo.firstName}.co
+            AOI Infotech
           </button>
 
           {/* Desktop Navigation */}
@@ -350,14 +515,14 @@ function NavBar() {
             ))}
           </div>
 
-          {/* Social Icons - Desktop */}
-          <div className="hidden md:flex items-center gap-4">
-            <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors">
-              <GitHubIcon />
-            </a>
-            <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors">
-              <LinkedInIcon />
-            </a>
+          {/* Start Now Button - Desktop */}
+          <div className="hidden md:flex items-center">
+            <button
+              onClick={onStartNow}
+              className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold px-5 py-2.5 rounded-xl text-sm shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              Start Now
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -376,6 +541,12 @@ function NavBar() {
                 {label}
               </button>
             ))}
+            <button
+              onClick={() => { setMenuOpen(false); onStartNow(); }}
+              className="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold px-5 py-2.5 rounded-xl text-sm shadow-lg mt-2"
+            >
+              Start Now
+            </button>
           </div>
         </div>
       )}
@@ -440,7 +611,7 @@ function HeroSection() {
               <div className="px-2 py-2 font-mono text-[10px] leading-[1.6]">
                 <div className="flex">
                   <span className="text-gray-600 w-6 text-right mr-3 select-none">1</span>
-                  <div><span className="text-[#c586c0]">const</span> <span className="text-[#9cdcfe]">dev</span> <span className="text-white">=</span> <span className="text-[#ce9178]">&quot;Jonathan&quot;</span></div>
+                  <div><span className="text-[#c586c0]">const</span> <span className="text-[#9cdcfe]">dev</span> <span className="text-white">=</span> <span className="text-[#ce9178]">&quot;AOI&quot;</span></div>
                 </div>
                 <div className="flex">
                   <span className="text-gray-600 w-6 text-right mr-3 select-none">2</span>
@@ -491,11 +662,11 @@ function HeroSection() {
             >
               <div className="flex items-center gap-3">
                 <div className="w-11 h-11 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm ring-2 ring-white shadow-md">
-                  J
+                  A
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-900 text-sm">Jonathan Naik</div>
-                  <div className="text-[11px] text-gray-500">Full Stack Developer</div>
+                  <div className="font-semibold text-gray-900 text-sm">AD ON AI Infotech</div>
+                  <div className="text-[11px] text-gray-500">Web Solutions</div>
                   <div className="flex items-center gap-1 mt-0.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
                     <span className="text-[10px] text-green-600 font-medium">Online</span>
@@ -1012,7 +1183,7 @@ function TestimonialsSection() {
 // CONTACT SECTION
 // =====================================================
 
-function ContactSection() {
+function ContactSection({ onStartNow }: { onStartNow: () => void }) {
   const { ref, isVisible } = useIntersectionObserver();
 
   return (
@@ -1022,36 +1193,38 @@ function ContactSection() {
           <p className="section-title">Contact</p>
           <h2 className="section-heading mb-6">Let&apos;s work together</h2>
           <p className="text-gray-600 mb-8">
-            Have a project in mind? I&apos;d love to hear about it. Send me a message and let&apos;s create something amazing together.
+            Have a project in mind? We&apos;d love to hear about it. Get in touch and let&apos;s create something amazing together.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 mb-12">
-            <a
-              href={`https://mail.google.com/mail/?view=cm&to=${personalInfo.email}`}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={onStartNow}
               className="btn-primary"
             >
-              <EmailIcon />
-              Get in Touch
-            </a>
+              <RocketIcon />
+              Start Now
+            </button>
             <a
-              href={personalInfo.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`mailto:${personalInfo.email}`}
               className="btn-secondary"
             >
-              <LinkedInIcon />
-              LinkedIn
+              <EmailIcon />
+              Email Us
             </a>
           </div>
 
           <div className="flex justify-center gap-6">
-            <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-600 transition-colors">
-              <GitHubIcon />
+            <a href={personalInfo.instagram} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-600 transition-colors">
+              <InstagramIcon />
             </a>
             <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-600 transition-colors">
               <LinkedInIcon />
+            </a>
+            <a href={personalInfo.x} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-600 transition-colors">
+              <XIcon />
+            </a>
+            <a href={`https://wa.me/${personalInfo.whatsapp}`} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-600 transition-colors">
+              <WhatsAppIcon />
             </a>
             <a href={`mailto:${personalInfo.email}`} className="text-gray-400 hover:text-blue-600 transition-colors">
               <EmailIcon />
@@ -1089,9 +1262,11 @@ function Footer() {
 // =====================================================
 
 export default function Home() {
+  const [showCtaModal, setShowCtaModal] = useState(false);
+
   return (
     <>
-      <NavBar />
+      <NavBar onStartNow={() => setShowCtaModal(true)} />
       <main>
         <HeroSection />
         <ServicesSection />
@@ -1099,9 +1274,10 @@ export default function Home() {
         <ProjectsSection />
         <AboutSection />
         <TestimonialsSection />
-        <ContactSection />
+        <ContactSection onStartNow={() => setShowCtaModal(true)} />
       </main>
       <Footer />
+      <CTAFormModal isOpen={showCtaModal} onClose={() => setShowCtaModal(false)} />
     </>
   );
 }
