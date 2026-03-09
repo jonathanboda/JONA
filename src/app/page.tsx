@@ -1246,6 +1246,11 @@ function Footer() {
 export default function Home() {
   const [showCtaModal, setShowCtaModal] = useState(false);
 
+  useEffect(() => {
+    const timer = setTimeout(() => setShowCtaModal(true), 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
       <NavBar onStartNow={() => setShowCtaModal(true)} />
