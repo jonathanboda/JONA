@@ -342,7 +342,6 @@ function CTAFormModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
     name: "",
     phone: "",
     service: "",
-    budget: "",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
 
@@ -357,20 +356,12 @@ function CTAFormModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
     "Custom Systems",
   ];
 
-  const budgets = [
-    "₹10,000 – ₹25,000",
-    "₹25,000 – ₹50,000",
-    "₹50,000 – ₹1,00,000",
-    "₹1,00,000+",
-  ];
-
   const validate = () => {
     const newErrors: Record<string, string> = {};
     if (!formData.name.trim()) newErrors.name = "Name is required";
     if (!formData.phone.trim() || !/^\d{10,15}$/.test(formData.phone.trim()))
       newErrors.phone = "Enter a valid phone number";
     if (!formData.service) newErrors.service = "Select a service";
-    if (!formData.budget) newErrors.budget = "Select a budget range";
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -379,11 +370,11 @@ function CTAFormModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
     e.preventDefault();
     if (!validate()) return;
 
-    const message = `Hello! I'm interested in your services.\n\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Service:* ${formData.service}\n*Budget:* ${formData.budget}`;
+    const message = `Hello! I'm interested in your services.\n\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Service:* ${formData.service}`;
     const url = `https://wa.me/${personalInfo.whatsapp}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
     onClose();
-    setFormData({ name: "", phone: "", service: "", budget: "" });
+    setFormData({ name: "", phone: "", service: "" });
     setErrors({});
   };
 
@@ -449,22 +440,6 @@ function CTAFormModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
               ))}
             </select>
             {errors.service && <p className="text-red-500 text-xs mt-1">{errors.service}</p>}
-          </div>
-
-          {/* Budget */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Budget *</label>
-            <select
-              value={formData.budget}
-              onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-              className={`w-full px-4 py-2.5 rounded-xl border ${errors.budget ? "border-red-400" : "border-gray-200"} bg-gray-50 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-500 transition-colors`}
-            >
-              <option value="">Select budget range</option>
-              {budgets.map((b) => (
-                <option key={b} value={b}>{b}</option>
-              ))}
-            </select>
-            {errors.budget && <p className="text-red-500 text-xs mt-1">{errors.budget}</p>}
           </div>
 
           {/* Submit */}
@@ -761,7 +736,7 @@ function HeroSection() {
 // SERVICES SECTION (BENTO GRID)
 // =====================================================
 
-function ServicesSection() {
+function ServicesSection({ onStartNow }: { onStartNow: () => void }) {
   const { ref, isVisible } = useIntersectionObserver();
 
   return (
@@ -778,7 +753,7 @@ function ServicesSection() {
             <span className="text-xs text-gray-400 uppercase tracking-wide">Frontend</span>
             <div>
               <h3 className="font-display text-xl font-bold mb-3">Business Websites</h3>
-              <span className="text-sm text-blue-400 cursor-pointer hover:underline">Start now</span>
+              <span className="text-sm text-blue-400 cursor-pointer hover:underline" onClick={onStartNow}>Start now</span>
             </div>
           </div>
 
@@ -787,7 +762,7 @@ function ServicesSection() {
             <span className="text-xs text-gray-400 uppercase tracking-wide">Fullstack</span>
             <div>
               <h3 className="font-display text-2xl md:text-3xl font-bold mb-3">Web Applications & Custom Solutions</h3>
-              <span className="text-sm text-blue-400 cursor-pointer hover:underline">Start now</span>
+              <span className="text-sm text-blue-400 cursor-pointer hover:underline" onClick={onStartNow}>Start now</span>
             </div>
           </div>
 
@@ -796,7 +771,7 @@ function ServicesSection() {
             <span className="text-xs text-gray-400 uppercase tracking-wide">Design</span>
             <div>
               <h3 className="font-display text-xl font-bold text-gray-900 mb-3">Landing Pages</h3>
-              <span className="text-sm text-blue-600 cursor-pointer hover:underline">Start now</span>
+              <span className="text-sm text-blue-600 cursor-pointer hover:underline" onClick={onStartNow}>Start now</span>
             </div>
           </div>
 
@@ -805,7 +780,7 @@ function ServicesSection() {
             <span className="text-xs text-gray-400 uppercase tracking-wide">Creative</span>
             <div>
               <h3 className="font-display text-xl font-bold text-gray-900 mb-3">Portfolio Sites</h3>
-              <span className="text-sm text-blue-600 cursor-pointer hover:underline">Start now</span>
+              <span className="text-sm text-blue-600 cursor-pointer hover:underline" onClick={onStartNow}>Start now</span>
             </div>
           </div>
 
@@ -814,7 +789,7 @@ function ServicesSection() {
             <span className="text-xs text-gray-700 uppercase tracking-wide">Backend</span>
             <div>
               <h3 className="font-display text-xl font-bold text-gray-900 mb-3">Admin Dashboards & APIs</h3>
-              <span className="text-sm text-gray-700 cursor-pointer hover:underline">Start now</span>
+              <span className="text-sm text-gray-700 cursor-pointer hover:underline" onClick={onStartNow}>Start now</span>
             </div>
           </div>
         </div>
@@ -1270,7 +1245,7 @@ export default function Home() {
       <NavBar onStartNow={() => setShowCtaModal(true)} />
       <main>
         <HeroSection />
-        <ServicesSection />
+        <ServicesSection onStartNow={() => setShowCtaModal(true)} />
         <SkillsSection />
         <ProjectsSection />
         <AboutSection />
