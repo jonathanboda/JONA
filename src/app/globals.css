@@ -72,6 +72,7 @@ body {
 
 .font-display {
   font-family: var(--font-display), system-ui, sans-serif;
+  text-transform: uppercase;
 }
 
 .font-body {
@@ -335,6 +336,7 @@ body {
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 700;
   line-height: 1.1;
+  text-transform: uppercase;
   color: var(--foreground);
 }
 
