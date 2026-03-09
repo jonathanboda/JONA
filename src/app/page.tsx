@@ -534,7 +534,7 @@ function NavBar({ onStartNow }: { onStartNow: () => void }) {
 // HERO SECTION
 // =====================================================
 
-function HeroSection() {
+function HeroSection({ onStartNow }: { onStartNow: () => void }) {
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
@@ -555,6 +555,12 @@ function HeroSection() {
               <button onClick={() => scrollToSection("projects")} className="btn-primary">
                 <PlayIcon />
                 View Projects
+              </button>
+              <button
+                onClick={onStartNow}
+                className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold px-6 py-3 rounded-xl text-sm shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                Start Now
               </button>
             </div>
           </div>
@@ -1244,7 +1250,7 @@ export default function Home() {
     <>
       <NavBar onStartNow={() => setShowCtaModal(true)} />
       <main>
-        <HeroSection />
+        <HeroSection onStartNow={() => setShowCtaModal(true)} />
         <ServicesSection onStartNow={() => setShowCtaModal(true)} />
         <SkillsSection />
         <ProjectsSection />
