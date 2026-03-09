@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef, RefObject } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 
 // =====================================================
 // TYPE DEFINITIONS
@@ -566,274 +565,176 @@ function HeroSection({ onStartNow }: { onStartNow: () => void }) {
             </div>
           </div>
 
-          {/* Right - Animated 3D Character Scene */}
-          <AnimatedHeroScene />
+          {/* Right - 3D Character Working on Laptop */}
+          <div className="relative h-[500px] lg:h-[600px] animate-fade-in-up delay-200">
+            {/* VS Code editor - BEHIND character */}
+            <div
+              className="absolute animate-float bg-[#1e1e1e] text-white rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] border border-[#333] z-0 overflow-hidden"
+              style={{ top: "3%", left: "-2%", animationDelay: "0s", width: "200px" }}
+            >
+              {/* Title bar */}
+              <div className="flex items-center justify-between px-3 py-1.5 bg-[#323233] border-b border-[#252526]">
+                <div className="flex items-center gap-1.5">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]"></span>
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]"></span>
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#27ca40]"></span>
+                </div>
+                <span className="text-[10px] text-gray-400 font-medium">index.ts</span>
+                <div className="w-12"></div>
+              </div>
+              {/* Tab bar */}
+              <div className="flex bg-[#252526] border-b border-[#1e1e1e]">
+                <div className="flex items-center gap-1.5 px-3 py-1 bg-[#1e1e1e] border-r border-[#252526] text-[10px] text-gray-300">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="#3178c6"><path d="M0 12v12h24V0H0v12zm19.34-.956c.61.152 1.074.423 1.501.865.221.236.549.666.575.77.008.03-1.036.73-1.668 1.123-.023.015-.115-.084-.217-.236-.31-.47-.632-.68-1.22-.637-.84.06-1.381.543-1.346 1.2.015.18.06.289.174.432.158.186.393.318 1.178.66 1.45.63 2.07 1.043 2.47 1.65.44.67.54 1.74.246 2.56-.34.93-1.175 1.56-2.377 1.8-.37.074-1.26.064-1.66-.02-.872-.19-1.7-.68-2.218-1.32-.2-.246-.598-.888-.564-.944l.633-.378.79-.468.197.295c.287.426.616.705 1.076.875.32.095 1.09.08 1.36-.023.315-.12.494-.34.559-.645.06-.295-.007-.504-.217-.695-.147-.134-.607-.345-1.334-.612-1.07-.393-1.53-.629-1.97-1.01-.272-.233-.53-.58-.662-.876-.12-.286-.15-.49-.15-1.006 0-.478.023-.63.137-.928.33-.874 1.152-1.475 2.25-1.655.377-.06 1.251-.024 1.63.07z"/><path d="M14.256 14.393l.008 1.367H10.67v7.783H8.326v-7.783H4.73v-1.318c0-.735.015-1.338.034-1.367.015-.03 2.16-.045 4.76-.04l4.725.012.007 1.346z"/></svg>
+                  <span>index.ts</span>
+                </div>
+              </div>
+              {/* Code content with line numbers */}
+              <div className="px-2 py-2 font-mono text-[10px] leading-[1.6]">
+                <div className="flex">
+                  <span className="text-gray-600 w-6 text-right mr-3 select-none">1</span>
+                  <div><span className="text-[#c586c0]">const</span> <span className="text-[#9cdcfe]">dev</span> <span className="text-white">=</span> <span className="text-[#ce9178]">&quot;AOI&quot;</span></div>
+                </div>
+                <div className="flex">
+                  <span className="text-gray-600 w-6 text-right mr-3 select-none">2</span>
+                  <div><span className="text-[#c586c0]">async</span> <span className="text-[#569cd6]">function</span> <span className="text-[#dcdcaa]">build</span><span className="text-white">() {`{`}</span></div>
+                </div>
+                <div className="flex">
+                  <span className="text-gray-600 w-6 text-right mr-3 select-none">3</span>
+                  <div className="text-[#6a9955]">&nbsp;&nbsp;// Creating magic<span className="animate-pulse text-white">|</span></div>
+                </div>
+                <div className="flex">
+                  <span className="text-gray-600 w-6 text-right mr-3 select-none">4</span>
+                  <div><span className="text-white">{`}`}</span></div>
+                </div>
+              </div>
+            </div>
+
+            {/* Terminal card - BEHIND character */}
+            <div
+              className="absolute animate-float bg-[#0d1117] text-white rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.35)] border border-[#30363d] z-0 overflow-hidden"
+              style={{ top: "6%", right: "-2%", animationDelay: "0.5s", width: "190px" }}
+            >
+              {/* Terminal title bar */}
+              <div className="flex items-center gap-2 px-3 py-1.5 bg-[#161b22] border-b border-[#30363d]">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8b949e" strokeWidth="2" strokeLinecap="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+                <span className="text-[10px] text-gray-400 font-medium">Terminal</span>
+              </div>
+              <div className="px-3 py-2.5 font-mono text-[10px] space-y-1.5">
+                <div className="flex items-center gap-1.5">
+                  <span className="text-green-400">&#10148;</span>
+                  <span className="text-gray-300">npm run dev</span>
+                </div>
+                <div className="text-gray-500 text-[9px]">compiled successfully</div>
+                <div className="flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                  <span className="text-green-400">ready on localhost:3000</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <span className="text-green-400">&#10148;</span>
+                  <span className="text-gray-500 animate-pulse">_</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Profile card - BEHIND character */}
+            <div
+              className="absolute animate-float bg-white rounded-2xl shadow-[0_4px_24px_rgba(0,0,0,0.08)] p-3.5 border border-gray-200/80 z-0"
+              style={{ top: "35%", left: "-5%", animationDelay: "0.8s" }}
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-11 h-11 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm ring-2 ring-white shadow-md">
+                  A
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-900 text-sm">AD ON AI(AOI) Infotech</div>
+                  <div className="text-[11px] text-gray-500">Web Solutions</div>
+                  <div className="flex items-center gap-1 mt-0.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                    <span className="text-[10px] text-green-600 font-medium">Online</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* React logo badge - IN FRONT */}
+            <div
+              className="absolute animate-float bg-[#20232a] p-3 rounded-2xl shadow-[0_4px_20px_rgba(97,218,251,0.25)] z-20 border border-[#61DAFB]/20"
+              style={{ top: "62%", left: "5%", animationDelay: "1s" }}
+            >
+              <svg viewBox="0 0 24 24" width="26" height="26" className="text-[#61DAFB]">
+                <circle cx="12" cy="12" r="2.5" fill="currentColor"/>
+                <ellipse cx="12" cy="12" rx="10" ry="4" stroke="currentColor" strokeWidth="1" fill="none"/>
+                <ellipse cx="12" cy="12" rx="10" ry="4" stroke="currentColor" strokeWidth="1" fill="none" transform="rotate(60 12 12)"/>
+                <ellipse cx="12" cy="12" rx="10" ry="4" stroke="currentColor" strokeWidth="1" fill="none" transform="rotate(120 12 12)"/>
+              </svg>
+            </div>
+
+            {/* Available for work badge - BEHIND character */}
+            <div
+              className="absolute animate-float bg-white rounded-full shadow-[0_2px_16px_rgba(0,0,0,0.08)] px-4 py-2 z-0 border border-gray-100"
+              style={{ top: "45%", right: "-2%", animationDelay: "1.2s" }}
+            >
+              <div className="flex items-center gap-2">
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+                </span>
+                <span className="text-sm font-medium text-gray-700">Available</span>
+              </div>
+            </div>
+
+            {/* Code brackets badge - IN FRONT */}
+            <div
+              className="absolute animate-float bg-gradient-to-br from-blue-500 to-blue-600 p-3 rounded-2xl shadow-[0_4px_20px_rgba(59,130,246,0.35)] z-20"
+              style={{ bottom: "25%", right: "8%", animationDelay: "0.3s" }}
+            >
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="white">
+                <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+              </svg>
+            </div>
+
+            {/* GitHub-style contribution widget - BEHIND */}
+            <div
+              className="absolute animate-float bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] px-3 py-2.5 border border-gray-200/80 z-0"
+              style={{ bottom: "30%", right: "-2%", animationDelay: "1.5s" }}
+            >
+              <div className="text-[10px] text-gray-500 font-medium mb-1.5">Contributions</div>
+              <div className="flex gap-[3px]">
+                {[3, 1, 4, 2, 4, 3, 2, 1, 4, 3, 2, 4].map((level, i) => (
+                  <div key={i} className="flex flex-col gap-[3px]">
+                    {[0, 1, 2].map((row) => (
+                      <div
+                        key={row}
+                        className="w-[6px] h-[6px] rounded-[2px]"
+                        style={{
+                          backgroundColor:
+                            (level + row) % 4 === 0 ? "#ebedf0" :
+                            (level + row) % 4 === 1 ? "#9be9a8" :
+                            (level + row) % 4 === 2 ? "#40c463" : "#216e39",
+                        }}
+                      />
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 3D Character - IN FRONT */}
+            <div className="absolute inset-0 flex items-center justify-center z-10">
+              <Image
+                src="/PHOTO/hero.png"
+                alt="3D Developer Character Working"
+                width={480}
+                height={480}
+                className="object-contain drop-shadow-2xl"
+                priority
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
-  );
-}
-
-// =====================================================
-// ANIMATED HERO SCENE
-// =====================================================
-
-function AnimatedHeroScene() {
-  return (
-    <div className="relative h-[500px] lg:h-[600px]">
-
-      {/* ===== SVG CHAIR — slides in from right ===== */}
-      <motion.div
-        className="absolute z-[5] pointer-events-none"
-        style={{ bottom: "12%", left: "50%", marginLeft: "-90px" }}
-        initial={{ x: 300, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ type: "spring", stiffness: 120, damping: 14, duration: 0.8 }}
-      >
-        <svg width="180" height="220" viewBox="0 0 180 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-          {/* Center pole */}
-          <rect x="85" y="120" width="10" height="60" rx="3" fill="#b0b0b0" />
-          {/* Seat cushion */}
-          <rect x="30" y="100" width="120" height="24" rx="12" fill="#d1d5db" />
-          {/* Backrest */}
-          <rect x="45" y="20" width="90" height="85" rx="16" fill="#e5e7eb" />
-          <rect x="50" y="25" width="80" height="75" rx="12" fill="#d1d5db" />
-          {/* Armrests */}
-          <rect x="25" y="85" width="20" height="8" rx="4" fill="#9ca3af" />
-          <rect x="135" y="85" width="20" height="8" rx="4" fill="#9ca3af" />
-          <rect x="28" y="85" width="6" height="30" rx="3" fill="#9ca3af" />
-          <rect x="146" y="85" width="6" height="30" rx="3" fill="#9ca3af" />
-          {/* Base plate */}
-          <ellipse cx="90" cy="182" rx="35" ry="6" fill="#9ca3af" />
-          {/* Wheels */}
-          <ellipse cx="40" cy="205" rx="10" ry="8" fill="#6b7280" />
-          <ellipse cx="90" cy="210" rx="10" ry="8" fill="#6b7280" />
-          <ellipse cx="140" cy="205" rx="10" ry="8" fill="#6b7280" />
-          {/* Wheel connectors (legs) */}
-          <line x1="90" y1="182" x2="40" y2="200" stroke="#9ca3af" strokeWidth="4" strokeLinecap="round" />
-          <line x1="90" y1="182" x2="90" y2="205" stroke="#9ca3af" strokeWidth="4" strokeLinecap="round" />
-          <line x1="90" y1="182" x2="140" y2="200" stroke="#9ca3af" strokeWidth="4" strokeLinecap="round" />
-        </svg>
-      </motion.div>
-
-      {/* ===== CHARACTER (hero.png) — slides from left, sits down ===== */}
-      <motion.div
-        className="absolute inset-0 flex items-center justify-center z-10"
-        initial={{ x: -200, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ delay: 0.8, type: "spring", stiffness: 80, damping: 16 }}
-      >
-        {/* Idle breathing float loop */}
-        <motion.div
-          animate={{ y: [0, -8, 0] }}
-          transition={{ delay: 1.6, repeat: Infinity, duration: 3, ease: "easeInOut" }}
-        >
-          {/* Typing shake wrapper */}
-          <motion.div
-            animate={{ x: [0, -0.5, 0.5, -0.5, 0] }}
-            transition={{ delay: 1.8, repeat: Infinity, duration: 0.15, repeatDelay: 0.6 }}
-          >
-            <Image
-              src="/PHOTO/hero.png"
-              alt="3D Developer Character Working"
-              width={480}
-              height={480}
-              className="object-contain drop-shadow-2xl"
-              priority
-            />
-          </motion.div>
-        </motion.div>
-
-        {/* Laptop glow overlay */}
-        <motion.div
-          className="absolute laptop-glow rounded-full pointer-events-none"
-          style={{
-            bottom: "32%",
-            left: "50%",
-            marginLeft: "-50px",
-            width: "100px",
-            height: "6px",
-            background: "linear-gradient(90deg, rgba(99,102,241,0.4), rgba(139,92,246,0.4))",
-          }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.6 }}
-        />
-      </motion.div>
-
-      {/* ===== FLOATING ELEMENTS — staggered entrance ===== */}
-
-      {/* VS Code editor - BEHIND character */}
-      <motion.div
-        className="absolute animate-float bg-[#1e1e1e] text-white rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] border border-[#333] z-0 overflow-hidden"
-        style={{ top: "3%", left: "-2%", animationDelay: "0s", width: "200px" }}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.2, duration: 0.5 }}
-      >
-        <div className="flex items-center justify-between px-3 py-1.5 bg-[#323233] border-b border-[#252526]">
-          <div className="flex items-center gap-1.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]"></span>
-            <span className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]"></span>
-            <span className="w-2.5 h-2.5 rounded-full bg-[#27ca40]"></span>
-          </div>
-          <span className="text-[10px] text-gray-400 font-medium">index.ts</span>
-          <div className="w-12"></div>
-        </div>
-        <div className="flex bg-[#252526] border-b border-[#1e1e1e]">
-          <div className="flex items-center gap-1.5 px-3 py-1 bg-[#1e1e1e] border-r border-[#252526] text-[10px] text-gray-300">
-            <svg width="10" height="10" viewBox="0 0 24 24" fill="#3178c6"><path d="M0 12v12h24V0H0v12zm19.34-.956c.61.152 1.074.423 1.501.865.221.236.549.666.575.77.008.03-1.036.73-1.668 1.123-.023.015-.115-.084-.217-.236-.31-.47-.632-.68-1.22-.637-.84.06-1.381.543-1.346 1.2.015.18.06.289.174.432.158.186.393.318 1.178.66 1.45.63 2.07 1.043 2.47 1.65.44.67.54 1.74.246 2.56-.34.93-1.175 1.56-2.377 1.8-.37.074-1.26.064-1.66-.02-.872-.19-1.7-.68-2.218-1.32-.2-.246-.598-.888-.564-.944l.633-.378.79-.468.197.295c.287.426.616.705 1.076.875.32.095 1.09.08 1.36-.023.315-.12.494-.34.559-.645.06-.295-.007-.504-.217-.695-.147-.134-.607-.345-1.334-.612-1.07-.393-1.53-.629-1.97-1.01-.272-.233-.53-.58-.662-.876-.12-.286-.15-.49-.15-1.006 0-.478.023-.63.137-.928.33-.874 1.152-1.475 2.25-1.655.377-.06 1.251-.024 1.63.07z"/><path d="M14.256 14.393l.008 1.367H10.67v7.783H8.326v-7.783H4.73v-1.318c0-.735.015-1.338.034-1.367.015-.03 2.16-.045 4.76-.04l4.725.012.007 1.346z"/></svg>
-            <span>index.ts</span>
-          </div>
-        </div>
-        <div className="px-2 py-2 font-mono text-[10px] leading-[1.6]">
-          <div className="flex">
-            <span className="text-gray-600 w-6 text-right mr-3 select-none">1</span>
-            <div><span className="text-[#c586c0]">const</span> <span className="text-[#9cdcfe]">dev</span> <span className="text-white">=</span> <span className="text-[#ce9178]">&quot;AOI&quot;</span></div>
-          </div>
-          <div className="flex">
-            <span className="text-gray-600 w-6 text-right mr-3 select-none">2</span>
-            <div><span className="text-[#c586c0]">async</span> <span className="text-[#569cd6]">function</span> <span className="text-[#dcdcaa]">build</span><span className="text-white">() {`{`}</span></div>
-          </div>
-          <div className="flex">
-            <span className="text-gray-600 w-6 text-right mr-3 select-none">3</span>
-            <div className="text-[#6a9955]">&nbsp;&nbsp;// Creating magic<span className="animate-pulse text-white">|</span></div>
-          </div>
-          <div className="flex">
-            <span className="text-gray-600 w-6 text-right mr-3 select-none">4</span>
-            <div><span className="text-white">{`}`}</span></div>
-          </div>
-        </div>
-      </motion.div>
-
-      {/* Terminal card - BEHIND character */}
-      <motion.div
-        className="absolute animate-float bg-[#0d1117] text-white rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.35)] border border-[#30363d] z-0 overflow-hidden"
-        style={{ top: "6%", right: "-2%", animationDelay: "0.5s", width: "190px" }}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.5, duration: 0.5 }}
-      >
-        <div className="flex items-center gap-2 px-3 py-1.5 bg-[#161b22] border-b border-[#30363d]">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8b949e" strokeWidth="2" strokeLinecap="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
-          <span className="text-[10px] text-gray-400 font-medium">Terminal</span>
-        </div>
-        <div className="px-3 py-2.5 font-mono text-[10px] space-y-1.5">
-          <div className="flex items-center gap-1.5">
-            <span className="text-green-400">&#10148;</span>
-            <span className="text-gray-300">npm run dev</span>
-          </div>
-          <div className="text-gray-500 text-[9px]">compiled successfully</div>
-          <div className="flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
-            <span className="text-green-400">ready on localhost:3000</span>
-          </div>
-          <div className="flex items-center gap-1.5">
-            <span className="text-green-400">&#10148;</span>
-            <span className="text-gray-500 animate-pulse">_</span>
-          </div>
-        </div>
-      </motion.div>
-
-      {/* Profile card - BEHIND character */}
-      <motion.div
-        className="absolute animate-float bg-white rounded-2xl shadow-[0_4px_24px_rgba(0,0,0,0.08)] p-3.5 border border-gray-200/80 z-0"
-        style={{ top: "35%", left: "-5%", animationDelay: "0.8s" }}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.7, duration: 0.5 }}
-      >
-        <div className="flex items-center gap-3">
-          <div className="w-11 h-11 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm ring-2 ring-white shadow-md">
-            A
-          </div>
-          <div>
-            <div className="font-semibold text-gray-900 text-sm">AD ON AI(AOI) Infotech</div>
-            <div className="text-[11px] text-gray-500">Web Solutions</div>
-            <div className="flex items-center gap-1 mt-0.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
-              <span className="text-[10px] text-green-600 font-medium">Online</span>
-            </div>
-          </div>
-        </div>
-      </motion.div>
-
-      {/* React logo badge - IN FRONT */}
-      <motion.div
-        className="absolute animate-float bg-[#20232a] p-3 rounded-2xl shadow-[0_4px_20px_rgba(97,218,251,0.25)] z-20 border border-[#61DAFB]/20"
-        style={{ top: "62%", left: "5%", animationDelay: "1s" }}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.9, duration: 0.5 }}
-      >
-        <svg viewBox="0 0 24 24" width="26" height="26" className="text-[#61DAFB]">
-          <circle cx="12" cy="12" r="2.5" fill="currentColor"/>
-          <ellipse cx="12" cy="12" rx="10" ry="4" stroke="currentColor" strokeWidth="1" fill="none"/>
-          <ellipse cx="12" cy="12" rx="10" ry="4" stroke="currentColor" strokeWidth="1" fill="none" transform="rotate(60 12 12)"/>
-          <ellipse cx="12" cy="12" rx="10" ry="4" stroke="currentColor" strokeWidth="1" fill="none" transform="rotate(120 12 12)"/>
-        </svg>
-      </motion.div>
-
-      {/* Available for work badge - BEHIND character */}
-      <motion.div
-        className="absolute animate-float bg-white rounded-full shadow-[0_2px_16px_rgba(0,0,0,0.08)] px-4 py-2 z-0 border border-gray-100"
-        style={{ top: "45%", right: "-2%", animationDelay: "1.2s" }}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 2.1, duration: 0.5 }}
-      >
-        <div className="flex items-center gap-2">
-          <span className="relative flex h-2.5 w-2.5">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
-          </span>
-          <span className="text-sm font-medium text-gray-700">Available</span>
-        </div>
-      </motion.div>
-
-      {/* Code brackets badge - IN FRONT */}
-      <motion.div
-        className="absolute animate-float bg-gradient-to-br from-blue-500 to-blue-600 p-3 rounded-2xl shadow-[0_4px_20px_rgba(59,130,246,0.35)] z-20"
-        style={{ bottom: "25%", right: "8%", animationDelay: "0.3s" }}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 2.3, duration: 0.5 }}
-      >
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="white">
-          <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
-        </svg>
-      </motion.div>
-
-      {/* GitHub-style contribution widget - BEHIND */}
-      <motion.div
-        className="absolute animate-float bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] px-3 py-2.5 border border-gray-200/80 z-0"
-        style={{ bottom: "30%", right: "-2%", animationDelay: "1.5s" }}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 2.5, duration: 0.5 }}
-      >
-        <div className="text-[10px] text-gray-500 font-medium mb-1.5">Contributions</div>
-        <div className="flex gap-[3px]">
-          {[3, 1, 4, 2, 4, 3, 2, 1, 4, 3, 2, 4].map((level, i) => (
-            <div key={i} className="flex flex-col gap-[3px]">
-              {[0, 1, 2].map((row) => (
-                <div
-                  key={row}
-                  className="w-[6px] h-[6px] rounded-[2px]"
-                  style={{
-                    backgroundColor:
-                      (level + row) % 4 === 0 ? "#ebedf0" :
-                      (level + row) % 4 === 1 ? "#9be9a8" :
-                      (level + row) % 4 === 2 ? "#40c463" : "#216e39",
-                  }}
-                />
-              ))}
-            </div>
-          ))}
-        </div>
-      </motion.div>
-
-    </div>
   );
 }
 
