@@ -138,27 +138,19 @@ const services: Service[] = [
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Sarah Johnson",
-    role: "Founder",
-    company: "Elvenwood Interior",
-    feedback: "AD ON AI(AOI) Infotech delivered an exceptional website that perfectly captures our brand. Their attention to detail and technical expertise made the entire process smooth and enjoyable.",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80",
+    name: "Manikanta",
+    role: "CEO",
+    company: "The Precious Interiors",
+    feedback: "Amazing Experience with Adonai Web Designers! I'm extremely pleased with the work Adonai Web Designers did for my interior design website. Their team took the time to understand my vision and delivered a stunning, user-friendly site that perfectly reflects my brand. Their creativity, professionalism, and attention to detail were outstanding. I highly recommend them to anyone looking for top-notch web design services!",
+    image: "/PHOTO/manikanta.jpg",
   },
   {
     id: 2,
     name: "Mr. Gnana",
     role: "Music Director",
     company: "Independent Artist",
-    feedback: "Working with AD ON AI(AOI) Infotech was a great experience. They understood my vision and created a portfolio that truly represents my work as a music director.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
-  },
-  {
-    id: 3,
-    name: "Priya Sharma",
-    role: "CEO",
-    company: "The Precious Interiors",
-    feedback: "Professional, responsive, and incredibly talented. AD ON AI(AOI) Infotech transformed our online presence with a stunning website that our clients love.",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80",
+    feedback: "AD ON AI INFOTECH created my official website, and I'm really happy with their work. The design is professional, and the team was very supportive throughout the process. I highly recommend AD ON AI INFOTECH to anyone looking for a quality website. Thank you!",
+    image: "/PHOTO/sunny.jpeg",
   },
 ];
 
