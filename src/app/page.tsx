@@ -1108,7 +1108,7 @@ function TestimonialsSection() {
           <h2 className="section-heading">What Clients Say</h2>
         </div>
 
-        <div className={`grid md:grid-cols-3 gap-6 ${isVisible ? "animate-fade-in-up delay-200" : "opacity-0"}`}>
+        <div className={`grid md:grid-cols-2 gap-6 max-w-4xl mx-auto ${isVisible ? "animate-fade-in-up delay-200" : "opacity-0"}`}>
           {testimonials.map((testimonial, index) => {
             const cardStyles = [
               "bg-blue-500 text-white",
